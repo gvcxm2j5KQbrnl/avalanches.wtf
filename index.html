@@ -5,86 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>avalanches.wtf</title>
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #0b0b0c;
+      color: #f2f2f2;
+      font-family: Inter, Arial, sans-serif;
+    }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  background: #0b0b0c;
-  color: #f2f2f2;
-  font-family: Inter, Arial, sans-serif;
-}
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 50px 20px 0; /* reduced top padding */
+    }
 
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 70px 20px;
-}
+    h1 {
+      font-size: 46px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
 
-h1 {
-  font-size: 46px;
-  margin-bottom: 10px;
-  font-weight: 700;
-  text-align: center;
-}
+    .subtitle {
+      color: #9ca3af;
+      font-size: 17px;
+      margin: 0 0 30px 0; /* reduced bottom margin */
+    }
 
-.subtitle {
-  color: #9ca3af;
-  font-size: 17px;
-  text-align: center;
-  margin-bottom: 50px;
-}
+    iframe {
+      width: 100%;
+      max-width: 500px;
+      height: 350px;
+      margin: 0 auto 20px; /* reduced space below badge */
+      border: none;
+      display: block;
+    }
 
-.section-title {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 30px 0 10px;
-  text-align: center;
-}
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 20px 0 10px;
+    }
 
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
-}
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
 
-.socials img {
-  width: 26px;
-}
+    .socials img {
+      width: 26px;
+    }
 
-a {
-  color: #a78bfa;
-  text-decoration: none;
-  font-weight: 500;
-}
+    .projects p {
+      margin: 0; /* removes left indent from <p> */
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    a {
+      color: #a78bfa;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-iframe {
-  width: 100%;
-  max-width: 500px;
-  height: 350px;
-  margin: 0 auto 30px;
-  border: none;
-  display: block;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-footer {
-  margin-top: auto;
-  padding: 20px 0;
-  color: #9ca3af;
-  font-size: 13px;
-  text-align: center;
-}
-
+    footer {
+      margin-top: auto;
+      padding: 20px 0;
+      color: #9ca3af;
+      font-size: 13px;
+    }
   </style>
 </head>
 <body>
@@ -105,15 +104,13 @@ footer {
     </div>
 
     <div class="section-title">projects</div>
-    <p>
-      <a href="https://github.com/gvcxm2j5KQbrnl/Local-Password-Manager" target="_blank" rel="noopener noreferrer">
+    <div class="projects">
+      <p><a href="https://github.com/gvcxm2j5KQbrnl/Local-Password-Manager" target="_blank" rel="noopener noreferrer">
         Local Password Manager
-      </a>
-    </p>
+      </a></p>
+    </div>
   </div>
 
-  <footer>
-    <p class="meta">© avalanches.wtf</p>
-  </footer>
+  <footer>© avalanches.wtf</footer>
 </body>
 </html>
