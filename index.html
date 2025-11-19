@@ -8,50 +8,54 @@
     html, body {
       height: 100%;
       margin: 0;
+      background: #0b0b0c;
+      color: #f2f2f2;
+      font-family: Inter, Arial, sans-serif;
     }
 
     body {
       display: flex;
       flex-direction: column;
-      background: #0b0b0c;
-      color: #f2f2f2;
-      font-family: Inter, Arial, sans-serif;
-      text-align: center;
     }
 
     .container {
-      flex: 1;
       max-width: 720px;
       margin: auto;
       padding: 70px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
     h1 {
       font-size: 46px;
-      margin-bottom: 10px;
+      margin: 0;
       font-weight: 700;
+      text-align: center;
     }
 
     .subtitle {
       color: #9ca3af;
-      margin-bottom: 50px;
       font-size: 17px;
-    }
-
-    img {
-      border-radius: 6px;
+      text-align: center;
+      margin: 0;
     }
 
     .section-title {
-      margin-top: 50px;
-      margin-bottom: 14px;
       font-size: 24px;
       font-weight: 600;
+      margin: 20px 0 10px;
+      text-align: center;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
     .socials img {
       width: 26px;
-      margin: 0 12px;
       vertical-align: middle;
     }
 
@@ -65,38 +69,40 @@
       text-decoration: underline;
     }
 
+    iframe {
+      width: 100%;
+      max-width: 500px;
+      height: 350px;
+      margin: 0 auto;
+      border: none;
+      display: block;
+    }
+
     footer {
-      margin-top: 60px;
+      margin-top: auto;
+      padding: 20px 0;
       color: #9ca3af;
       font-size: 13px;
       text-align: center;
-    }
-
-    iframe {
-      border: none;
-      overflow: hidden;
-      width: 100%;
-      height: 350px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-
     <h1>avalanches.wtf</h1>
     <p class="subtitle">my space for learning and building things</p>
 
     <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4539207"></iframe>
 
     <div class="section-title">socials</div>
-    <p class="socials">
+    <div class="socials">
       <a href="https://discord.com/users/428575537917722625" target="_blank" rel="noopener noreferrer">
         <img src="https://github.com/user-attachments/assets/32fb9caa-21c3-4ddb-9a9b-0ea52c56ed36" alt="discord">
       </a>
       <a href="https://steamcommunity.com/id/tyu/" target="_blank" rel="noopener noreferrer">
         <img src="https://github.com/user-attachments/assets/cdfc895f-9366-47f3-b5a3-b6a2e8fa0b50" alt="steam">
       </a>
-    </p>
+    </div>
 
     <div class="section-title">projects</div>
     <p>
@@ -104,7 +110,6 @@
         Local Password Manager
       </a>
     </p>
-
   </div>
 
   <footer>
