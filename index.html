@@ -1,9 +1,91 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>In Progress</title>
-  </head>
-  <body>
-    <p>Welcome to my Website</p>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>avalanches.wtf</title>
+  <meta name="description" content="Personal hub for projects, socials, and progress logs." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c3aed;--glass:rgba(255,255,255,0.03)}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#061026 0%, #071523 100%);-webkit-font-smoothing:antialiased}
+    .container{max-width:900px;margin:48px auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    .brand{display:flex;flex-direction:column}
+    h1{margin:0;font-size:32px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    .badge{margin-top:12px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:28px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 24px rgba(2,6,23,0.6);}
+    .socials img{vertical-align:middle}
+    .socials a{display:inline-block;margin-right:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(180deg,var(--accent),#5b21b6);color:white;text-decoration:none}
+    .meta{color:var(--muted);font-size:13px;margin-top:6px}
+    pre{white-space:pre-wrap;background:var(--glass);padding:12px;border-radius:8px;color:var(--muted);overflow:auto}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <h1>avalanches.wtf</h1>
+        <p class="lead">my space for projects, progress, and everything i'm working on.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="badge">
+          <a href="https://tryhackme.com/p/taww" target="_blank" rel="noopener noreferrer">
+            <img src="https://tryhackme-badges.s3.amazonaws.com/taww.png" alt="thm badge" width="300">
+          </a>
+        </div>
+
+        <h2 style="margin-top:18px">socials</h2>
+        <p class="socials">
+          <a href="https://discord.com/users/428575537917722625" target="_blank" rel="noopener noreferrer" title="Discord">
+            <img src="https://github.com/user-attachments/assets/32fb9caa-21c3-4ddb-9a9b-0ea52c56ed36" width="20" alt="discord">
+          </a>
+          <a href="https://steamcommunity.com/id/tyu/" target="_blank" rel="noopener noreferrer" title="Steam">
+            <img src="https://github.com/user-attachments/assets/cdfc895f-9366-47f3-b5a3-b6a2e8fa0b50" width="20" alt="steam">
+          </a>
+        </p>
+
+        <h2 style="margin-top:18px">first project</h2>
+        <p class="meta">Local Password Manager</p>
+        <p><a class="btn" href="https://github.com/gvcxm2j5KQbrnl/Local-Password-Manager" target="_blank" rel="noopener noreferrer">view on github</a></p>
+
+        <h2 style="margin-top:18px">readme snapshot</h2>
+        <pre>
+# hi 👋
+
+<p align="left">
+  <a href="https://tryhackme.com/p/taww" target="_blank">
+    <img src="https://tryhackme-badges.s3.amazonaws.com/taww.png" alt="thm badge" width="300"/>
+  </a>
+</p>
+
+### my socials:
+<p align="left">
+  <a href="https://discord.com/users/428575537917722625" target="_blank" title="Discord">
+    <img src="https://github.com/user-attachments/assets/32fb9caa-21c3-4ddb-9a9b-0ea52c56ed36" width="20" alt="discord"/>
+  </a>
+  <a href="https://steamcommunity.com/id/tyu/" target="_blank" title="Steam">
+    <img src="https://github.com/user-attachments/assets/cdfc895f-9366-47f3-b5a3-b6a2e8fa0b50" width="20" alt="steam"/>
+  </a>
+</p>
+
+that's my github readme
+
+and this is my first project
+https://github.com/gvcxm2j5KQbrnl/Local-Password-Manager
+        </pre>
+      </section>
+    </main>
+
+    <footer>
+      <p class="meta">© avalanches.wtf</p>
+    </footer>
+  </div>
+</body>
 </html>
