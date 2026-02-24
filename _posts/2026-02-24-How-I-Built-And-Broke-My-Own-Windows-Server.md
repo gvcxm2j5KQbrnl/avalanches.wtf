@@ -6,6 +6,8 @@ permalink: /blogs/how-i-built-and-broke-windows-server/
 categories: infrastructure security
 ---
 <link rel="stylesheet" href="/assets/css/blog.css">
-soon™️
 
-<img src=https://avalanches.wtf/assets/web-app-manifest-512x512.png alt="funny anime girl" width="500" height="600">
+<div style="display: flex; align-items: center; gap: 20px;">
+  <span>soon™️</span>
+  <img src="https://avalanches.wtf/assets/web-app-manifest-512x512.png" alt="funny anime girl" width="100">
+</div>
