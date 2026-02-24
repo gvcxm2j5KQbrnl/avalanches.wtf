@@ -1,5 +1,3 @@
-title: avalanches.wtf
-theme: minima
-minima:
-  skin: dark
+title: avalanches
+theme: jekyll-theme-minimal
 permalink: /blogs/:title/
