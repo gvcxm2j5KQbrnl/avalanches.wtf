@@ -9,7 +9,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="{{ '/assets/web-app-manifest-512x512.png' | absolute_url }}" />
   <meta property="og:description" content="my space for learning and building things.">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
   <title>avalanches.wtf</title>
@@ -22,8 +23,8 @@
   <link rel="manifest" href="{{ '/assets/site.webmanifest' | relative_url }}" />
 </head>
 
-<body>
-  <body class="home-layout"> <div class="container">
+<body class="home-layout">
+  <div class="container">
     <h1 class="typing">avalanches.wtf</h1>
     <p class="subtitle">my space for learning and building things</p>
 
@@ -63,7 +64,6 @@
   <script>
     const titleText = "avalanches.wtf";
     let index = 0;
-
     function typeTitle() {
       document.title = titleText.slice(0, index + 1);
       index++;
