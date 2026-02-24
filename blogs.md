@@ -5,9 +5,10 @@ permalink: /blogs/
 ---
 <link rel="stylesheet" href="/assets/css/blog.css">
 Welcome to my personal Blog.
-<br>I occasionally build stuff, and I like to break it too.
-<br>Cybersecurity Enthusiast
+<br>Here you can find projects I am, or have been working on.
+<br> I break to build, and build to break.
 
+<p></p>
 ### Recent Logs 
 <ul>
   {% for post in site.posts %}
