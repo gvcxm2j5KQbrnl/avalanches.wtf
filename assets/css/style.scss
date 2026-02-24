@@ -1,0 +1,60 @@
+---
+---
+@import "minima";
+
+/* Dein Custom CSS ab hier */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #0b0b0c !important;
+  color: #f2f2f2 !important;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* Deine Typing Animation */
+.typing {
+  font-size: 46px;
+  font-weight: 700;
+  border-right: 3px solid #a78bfa;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  margin: 0 auto 10px;
+  animation: typing 2s steps(14) forwards, blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 14ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Dein Gradient-Header */
+h1 {
+  background: linear-gradient(90deg, #a78bfa, #f472b6, #6b38c9) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-size: 250% 100%;
+}
+
+/* Restliches CSS von dir */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 20px 120px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 17px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
