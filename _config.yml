@@ -6,6 +6,6 @@ plugins:
   - jekyll-remote-theme
 
 minima:
-  skin: dark
+#  skin: dark
 
 permalink: /blogs/:title/
