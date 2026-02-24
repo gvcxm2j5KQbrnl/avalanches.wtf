@@ -9,5 +9,5 @@ categories: infrastructure security
 
 <div style="display: flex; align-items: center; gap: 20px;">
   <span>soon™️</span>
-  <img src="https://avalanches.wtf/assets/web-app-manifest-512x512.png" alt="funny anime girl" width="100">
+  <img src="https://avalanches.wtf/assets/web-app-manifest-512x512.png" alt="funny anime girl" width="235">
 </div>
