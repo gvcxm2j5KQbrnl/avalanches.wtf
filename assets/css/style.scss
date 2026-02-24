@@ -9,22 +9,8 @@ $background-color:      #0b0b0c !default;
 $grey-color:            #9ca3af !default;
 $grey-color-light:      #374151 !default;
 $grey-color-dark:       #111827 !default;
-$border-color-01:       #374151 !default;
-$border-color-02:       #4b5563 !default;
-$border-color-03:       #1f2937 !default;
-$code-background-color: #1a1a1b !default;
-$table-zebra-color:     #161617 !default;
-$table-header-color:    #212122 !default;
-$table-header-font-color: #ffffff !default;
-$brand-color:           #a78bfa !default;
-$link-base-color:       #a78bfa !default;
-$link-visited-color:    #f472b6 !default;
-$link-hover-color:      #ffffff !default;
-$text-color:            #f2f2f2 !default;
-$background-color:      #0b0b0c !default;
-$grey-color:            #9ca3af !default;
-$grey-color-light:      #374151 !default;
-$grey-color-dark:       #111827 !default;
+
+
 $border-color-01:       #374151 !default;
 $border-color-02:       #4b5563 !default;
 $border-color-03:       #1f2937 !default;
@@ -43,7 +29,15 @@ html, body {
   background: #0b0b0c !important;
   color: #f2f2f2 !important;
   font-family: Inter, Arial, sans-serif;
+  text-align: center;
 }
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 120px;
+}
+
 
 .typing {
   font-size: 46px;
@@ -54,6 +48,7 @@ html, body {
   width: 0;
   margin: 0 auto 10px;
   animation: typing 2s steps(14) forwards, blink 0.5s step-end infinite alternate;
+  pointer-events: none;
 }
 
 @keyframes typing {
@@ -72,19 +67,54 @@ h1 {
   background-size: 250% 100%;
 }
 
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 20px 20px 120px;
-}
-
 .subtitle {
   color: #9ca3af;
   font-size: 17px;
+  margin-bottom: 30px;
 }
 
 .socials {
   display: flex;
   justify-content: center;
   gap: 20px;
+  margin-bottom: 40px;
+}
+
+.socials img {
+  width: 26px;
+  transition: opacity 0.2s;
+}
+
+.socials img:hover {
+  opacity: 0.8;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 40px 0 20px;
+  color: #f2f2f2;
+}
+
+.projects p {
+  margin: 20px 0 !important;
+}
+
+.projects a {
+  display: inline-block;
+  color: #a78bfa;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  z-index: 10;
+}
+
+.projects a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  padding: 40px 0;
+  color: #9ca3af;
+  font-size: 13px;
 }
