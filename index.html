@@ -3,78 +3,81 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="avalanches.wtf" />
-<meta property="og:type" content="blog" />
-<meta property="og:image" content="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/web-app-manifest-512x512.png" />
-<meta property="og:description" content="my space for learning and building things.">
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-
-<title>avalanches.wtf</title>
-    
-<link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-<link rel="shortcut icon" href="/assets/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="avalanches" />
-<link rel="manifest" href="/assets/site.webmanifest" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <meta property="og:title" content="avalanches.wtf" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ '/assets/web-app-manifest-512x512.png' | absolute_url }}" />
+  <meta property="og:description" content="my space for learning and building things.">
+  
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <title>avalanches.wtf</title>
+  
+  <link rel="icon" type="image/png" href="{{ '/assets/favicon-96x96.png' | relative_url }}" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}" />
+  <link rel="shortcut icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | relative_url }}" />
+  <meta name="apple-mobile-web-app-title" content="avalanches" />
+  <link rel="manifest" href="{{ '/assets/site.webmanifest' | relative_url }}" />
 </head>
+
 <body>
-<div class="container">
-  <h1 class="typing">avalanches.wtf</h1>
-  <p class="subtitle">my space for learning and building things</p>
+  <div class="container">
+    <h1 class="typing">avalanches.wtf</h1>
+    <p class="subtitle">my space for learning and building things</p>
 
-  <div class="badge-thm-wrapper">
-    <a href="https://tryhackme.com/p/taww" target="_blank" rel="noopener noreferrer">
-      <img src="https://tryhackme-badges.s3.amazonaws.com/taww.png" alt="THM Badge" width="280">
-    </a>
+    <div class="badge-thm-wrapper">
+      <a href="https://tryhackme.com/p/taww" target="_blank" rel="noopener noreferrer">
+        <img src="https://tryhackme-badges.s3.amazonaws.com/taww.png" alt="THM Badge" width="280">
+      </a>
+    </div>
+
+    <div class="section-title">socials</div>
+    <div class="socials">
+      <a href="https://discord.com/users/428575537917722625" target="_blank" rel="noopener noreferrer">
+        <img src="https://github.com/user-attachments/assets/32fb9caa-21c3-4ddb-9a9b-0ea52c56ed36" alt="discord">
+      </a>
+      <a href="https://steamcommunity.com/id/tyu/" target="_blank" rel="noopener noreferrer">
+        <img src="https://github.com/user-attachments/assets/cdfc895f-9366-47f3-b5a3-b6a2e8fa0b50" alt="steam">
+      </a>
+    </div>
+
+    <div class="section-title">projects</div>
+    <div class="projects">
+      <p>
+        <a href="{{ '/blogs/' | relative_url }}">
+          My IT-Logs & Blogs
+        </a>
+      </p>
+      <p>
+        <a href="https://github.com/gvcxm2j5KQbrnl/Local-Password-Manager" target="_blank" rel="noopener noreferrer">
+          Local Password Manager
+        </a>
+      </p>
+    </div>
   </div>
 
-  <div class="section-title">socials</div>
-  <div class="socials">
-    <a href="https://discord.com/users/428575537917722625" target="_blank" rel="noopener noreferrer">
-      <img src="https://github.com/user-attachments/assets/32fb9caa-21c3-4ddb-9a9b-0ea52c56ed36" alt="discord">
-    </a>
-    <a href="https://steamcommunity.com/id/tyu/" target="_blank" rel="noopener noreferrer">
-      <img src="https://github.com/user-attachments/assets/cdfc895f-9366-47f3-b5a3-b6a2e8fa0b50" alt="steam">
-    </a>
-  </div>
+  <footer>© {{ "now" | date: "%Y" }} avalanches.wtf</footer>
 
-  <div class="section-title">projects</div>
-  <div class="projects">
-    <p><a href="https://avalanches.wtf/blogs/" target="_blank" rel="noopener noreferrer">
-      My Blogs
-    </a></p>
-<p></p>
-    <p><a href="https://github.com/gvcxm2j5KQbrnl/Local-Password-Manager" target="_blank" rel="noopener noreferrer">
-      Local Password Manager
-    </a></p>
-  </div>
-</div>
+  <script>
+    const titleText = "avalanches.wtf";
+    let index = 0;
 
-<footer>© avalanches.wtf</footer>
-    
-<script>
-const titleText = "avalanches.wtf";
-let index = 0;
-
-function typeTitle() {
-  document.title = titleText.slice(0, index + 1);
-  index++;
-  if (index < titleText.length) {
-    setTimeout(typeTitle, 130); // speed in ms
-  } else {
-    setTimeout(() => {
-      index = 0;
-      typeTitle();
-    }, 2000); // pause before repeating
-  }
-}
-
-typeTitle();
-</script>
-    
+    function typeTitle() {
+      document.title = titleText.slice(0, index + 1);
+      index++;
+      if (index < titleText.length) {
+        setTimeout(typeTitle, 130);
+      } else {
+        setTimeout(() => {
+          index = 0;
+          typeTitle();
+        }, 2000); 
+      }
+    }
+    typeTitle();
+  </script>
 </body>
 </html>
