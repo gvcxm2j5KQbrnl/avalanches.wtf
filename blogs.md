@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Project Documentation
+title: Other Blogs
 permalink: /blogs/
 ---
 
-Welcome to my personal Blog. 
-I occasionally build stuff, and I like to break it too.
-Cybersecurity Enthusiast
+Welcome to my personal Blog.
+<br>I occasionally build stuff, and I like to break it too.
+<br>Cybersecurity Enthusiast
 
 ### Recent Logs 
 <ul>
