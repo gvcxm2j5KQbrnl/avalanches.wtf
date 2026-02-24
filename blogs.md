@@ -14,7 +14,7 @@ permalink: /blogs/
     </div>
   </div>
   
-  <a href="https://avalanches.wtf" target="_blank" style="text-decoration: none; border: none;">
+  <a href="https://avalanches.wtf" rel="noopener noreferrer" style="text-decoration: none; border: none;">
     <img src="https://avalanches.wtf/assets/web-app-manifest-512x512.png" alt="funny anime girl" width="180" style="flex-shrink: 0; margin-top: 0; border: none; outline: none;">
   </a>
 </div>
