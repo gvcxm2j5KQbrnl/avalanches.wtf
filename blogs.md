@@ -3,7 +3,7 @@ layout: page
 title: My Projects
 permalink: /blogs/
 ---
-
+<link rel="stylesheet" href="/assets/css/blog.css">
 Welcome to my personal Blog.
 <br>I occasionally build stuff, and I like to break it too.
 <br>Cybersecurity Enthusiast
