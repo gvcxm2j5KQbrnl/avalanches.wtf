@@ -1,11 +1,8 @@
-title: avalanches.wtf
+title: avalanches
 remote_theme: "jekyll/minima@1e8a445"
 
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
-
-minima:
-#  skin: dark
 
 permalink: /blogs/:title/
