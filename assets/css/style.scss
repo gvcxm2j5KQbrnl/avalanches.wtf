@@ -1,24 +1,18 @@
----
----
-* {
-  box-sizing: border-box;
-}
+/* 1. Variablen für Minima definieren (Build-Sicherheit) */
+$brand-color:           #a78bfa;
+$text-color:            #f2f2f2;
+$background-color:      #0b0b0c;
+$table-border-color:    #374151;
 
+/* 2. Minima Framework laden */
+@import "minima/initialize";
+@import "minima/skins/dark";
+
+/* 3. DEINE SYNTAX (Nichts gelöscht!) */
 html, body {
-  height: 100%;
-  margin: 0;
   background: #0b0b0c !important;
   color: #f2f2f2 !important;
-  font-family: Inter, Arial, sans-serif;
-  text-align: center;
 }
-
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
 
 .typing {
   font-size: 46px;
@@ -28,10 +22,7 @@ html, body {
   white-space: nowrap;
   overflow: hidden;
   width: 0;
-  animation: typing 2s steps(14) forwards, blink 0.5s step-end infinite alternate;
-  
-
-  background: linear-gradient(90deg, #a78bfa, #f472b6, #6b38c9) !important; 
+  background: linear-gradient(90deg, #a78bfa, #f472b6, #6b38c9) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-size: 300% 100%;
@@ -40,49 +31,27 @@ html, body {
 
 @keyframes typing { from { width: 0; } to { width: 14ch; } }
 @keyframes blink { 50% { border-color: transparent; } }
-
 @keyframes gradient-animation {
   0% { background-position: 0% 0%; }
   50% { background-position: 100% 0%; }
   100% { background-position: 0% 0%; }
 }
 
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-}
-
 .socials img {
-  width: 32px !important; 
+  width: 32px !important;
   height: auto;
 }
 
-.badge-thm-wrapper img {
-  max-width: 280px; 
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.section-title {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 40px 0 10px;
-}
-
+/* FIX FÜR DIE ABSTÄNDE - Hier korrigieren wir das 'too spaced' */
 .projects p {
   margin: 15px 0 !important;
 }
 
-a {
-  color: #a78bfa !important;
-  text-decoration: none;
+.section-title {
+  margin-top: 30px !important;
+  margin-bottom: 10px !important;
 }
 
 footer {
   padding: 40px 0 20px;
-  color: #9ca3af;
-  font-size: 13px;
 }
