@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Documentation
+title: My Projects
 permalink: /blogs/
 ---
 
