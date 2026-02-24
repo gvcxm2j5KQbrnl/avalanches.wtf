@@ -2,8 +2,6 @@
 ---
 @import "minima";
 
-/* Dein Custom CSS ab hier */
-
 html, body {
   height: 100%;
   margin: 0;
@@ -12,7 +10,6 @@ html, body {
   font-family: Inter, Arial, sans-serif;
 }
 
-/* Deine Typing Animation */
 .typing {
   font-size: 46px;
   font-weight: 700;
@@ -33,7 +30,6 @@ html, body {
   50% { border-color: transparent; }
 }
 
-/* Dein Gradient-Header */
 h1 {
   background: linear-gradient(90deg, #a78bfa, #f472b6, #6b38c9) !important;
   -webkit-background-clip: text !important;
@@ -41,7 +37,6 @@ h1 {
   background-size: 250% 100%;
 }
 
-/* Restliches CSS von dir */
 .container {
   max-width: 720px;
   margin: 0 auto;
