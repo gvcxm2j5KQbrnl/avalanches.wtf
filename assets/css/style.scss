@@ -3,18 +3,18 @@
 @import "{{ site.theme }}";
 
 body {
-  background-color: #121212;
-  color: #e0e0e0;           
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
 }
 
 a {
-  color: #4fbcff;            
+  color: #4fbcff !important;
 }
 
 /* layout for lines of code */
 code {
-  background: #272822;
-  color: #f8f8f2;
-  padding: 2px 5px;
-  border-radius: 3px;
+  background: #272822 !important;
+  color: #f8f8f2 !important;
+  padding: 2px 5px !important;
+  border-radius: 3px !important;
 }
