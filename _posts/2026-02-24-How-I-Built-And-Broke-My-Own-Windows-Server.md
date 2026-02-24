@@ -5,5 +5,5 @@ date: 2026-02-24
 permalink: /blogs/how-i-built-and-broke-windows-server/
 categories: infrastructure security
 ---
-
+<link rel="stylesheet" href="/assets/css/blog.css">
 soon™️
