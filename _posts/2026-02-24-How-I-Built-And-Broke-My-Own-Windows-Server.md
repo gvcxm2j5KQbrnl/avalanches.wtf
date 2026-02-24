@@ -9,5 +9,5 @@ categories: infrastructure security
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top:">
   <span>soon™️</span>
-  <img src="https://github.com/user-attachments/assets/97ef1398-bb34-4543-a269-a066c8dd68c9" alt="funny cat" width="235">
+  <img src="https://github.com/user-attachments/assets/97ef1398-bb34-4543-a269-a066c8dd68c9" alt="funny cat" width="150">
 </div>
