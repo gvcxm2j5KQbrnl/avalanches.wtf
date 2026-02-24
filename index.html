@@ -53,5 +53,26 @@
 </div>
 
 <footer>© avalanches.wtf</footer>
+    
+<script>
+const titleText = "avalanches.wtf";
+let index = 0;
+
+function typeTitle() {
+  document.title = titleText.slice(0, index + 1);
+  index++;
+  if (index < titleText.length) {
+    setTimeout(typeTitle, 200); // speed in ms
+  } else {
+    setTimeout(() => {
+      index = 0;
+      typeTitle();
+    }, 2000); // pause before repeating
+  }
+}
+
+typeTitle();
+</script>
+    
 </body>
 </html>
