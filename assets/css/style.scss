@@ -12,6 +12,10 @@ $grey-color-dark:       #111827 !default;
 $border-color-01:       #374151 !default;
 $border-color-02:       #4b5563 !default;
 $border-color-03:       #1f2937 !default;
+$code-background-color: #1a1a1b !default;
+$table-zebra-color:     #161617 !default;
+$table-header-color:    #212122 !default;
+$table-header-font-color: #ffffff !default;
 @import "minima/initialize";
 @import "minima/skins/dark";
 
