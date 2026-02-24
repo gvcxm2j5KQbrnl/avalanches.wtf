@@ -7,7 +7,7 @@ categories: infrastructure security
 ---
 <link rel="stylesheet" href="/assets/css/blog.css">
 
-<div style="display: flex; align-items: center; gap: 20px;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top:">
   <span>soon™️</span>
-  <img src="https://avalanches.wtf/assets/web-app-manifest-512x512.png" alt="funny anime girl" width="235">
+  <img src="https://github.com/user-attachments/assets/97ef1398-bb34-4543-a269-a066c8dd68c9" alt="funny cat" width="235">
 </div>
