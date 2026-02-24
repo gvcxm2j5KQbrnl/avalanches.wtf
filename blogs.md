@@ -7,7 +7,7 @@ permalink: /blogs/
 Welcome to my personal Blog.
 <br>Here you can find projects I am, or have been working on.
 <br> I break to build, and build to break.
-<p>&nbsp;</p>
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
 
 ### Recent Logs 
 <ul>
