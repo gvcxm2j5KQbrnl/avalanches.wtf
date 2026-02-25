@@ -4,4 +4,4 @@ author: gvcxm2j5KQbrnl
 plugins:
   - jekyll-feed
 
-permalink: /blogs/:title/
+permalink: /blog/:title/
