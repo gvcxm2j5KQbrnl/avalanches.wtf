@@ -1,7 +1,7 @@
 ---
 layout: page
 title: My Projects
-permalink: /blogs/
+permalink: /blog/
 ---
 <link rel="stylesheet" href="/assets/css/blog.css">
 
