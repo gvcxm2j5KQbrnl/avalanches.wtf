@@ -18,21 +18,21 @@ categories: infrastructure security
 The objective of this project was to analyze the core of corporate infrastructure: Keyword **Active Directory**. By building the domain from scratch, I gained firsthand experience in the administrative configurations required for stability—and the security oversights that lead to total domain compromise.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px;">
-                                             Graphical Diagram of Forest
-                                          
-                                         +----------------------------------+
-                                         | Domain: lab.local                |
-                                         | (Static IP Network: 10.0.0.0/24) |
-                                         +----------------+-----------------+
-                                                          |
-                                    +---------------------+---------------------+
-                                    |                     |                     |
-                          +---------+---------+ +---------+---------+ +---------+---------+
-                          |      [ DC01 ]     | |    [ WKSTN01 ]    | |    [ ATTACKER ]   |
-                          | Windows Server 22 | | Windows 11 Pro    | | Arch Linux        |
-                          | Role: Domain Ctrl | | Role: Target      | | Role: Host        |
-                          | IP: 10.0.0.10     | | IP: 10.0.0.20     | | IP: 10.0.0.50     |
-                          +-------------------+ +-------------------+ +-------------------+
+                   Graphical Diagram of Forest
+                
+               +----------------------------------+
+               | Domain: lab.local                |
+               | (Static IP Network: 10.0.0.0/24) |
+               +----------------+-----------------+
+                                |
+          +---------------------+---------------------+
+          |                     |                     |
++---------+---------+ +---------+---------+ +---------+---------+
+|      [ DC01 ]     | |    [ WKSTN01 ]    | |    [ ATTACKER ]   |
+| Windows Server 22 | | Windows 11 Pro    | | Arch Linux        |
+| Role: Domain Ctrl | | Role: Target      | | Role: Host        |
+| IP: 10.0.0.10     | | IP: 10.0.0.20     | | IP: 10.0.0.50     |
++-------------------+ +-------------------+ +-------------------+
 </pre>
 
 ## Lab Architecture
