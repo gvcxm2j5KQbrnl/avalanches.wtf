@@ -53,8 +53,8 @@ To ensure a secure and isolated testing environment, I utilized a virtualized lo
         <img src="https://github.com/user-attachments/assets/e2210227-c3ae-4a7f-a955-c567abbd9068" 
              alt="Windows Server 2022 Versions" 
              style="width: 45%; border-radius: 8px; border: 1px solid #333;" />
-        <img src="https://github.com/user-attachments/assets/0be91295-829d-4081-801a-853f668102a9" 
-             alt="60GB Drive Partition" 
+            <img width="512" height="305" alt="image" src="https://github.com/user-attachments/assets/8677dc6d-bc30-4e9f-9400-41447128fc5f" />
+            alt="60GB Drive Partition" 
              style="width: 45%; border-radius: 8px; border: 1px solid #333;" />
       </div>
     </details>
