@@ -2,21 +2,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-  .site-title {
-    background-image: url("https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/logo.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left center;
-    color: transparent !important;
-    display: inline-block;
-    width: 150px;
-    height: 40px; 
-    overflow: hidden;
-    vertical-align: middle;
+  .site-title, .site-title:visited {
+    background-image: url("{{ '/assets/logo.png' | relative_url }}") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: left center !important;
+    color: transparent !important; 
+    display: inline-block !important;
+    width: 180px !important; 
+    height: 50px !important;  
+    overflow: hidden !important;
+    vertical-align: middle !important;
   }
 
   .site-title:hover {
-    text-decoration: none;
-    opacity: 0.8;
+    text-decoration: none !important;
+    opacity: 0.8 !important;
   }
 </style>
