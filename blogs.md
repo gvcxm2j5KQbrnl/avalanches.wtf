@@ -14,7 +14,6 @@ permalink: /blog/
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: -105px;">
   <div style="margin-top: 50px;">
-    <h1 style="font-size: 2.5rem; margin-bottom: 15px; color: #dfdfdf;">My Projects</h1>
     <div style="line-height: 1.5; font-size: 1.1rem; text-align: left;">
       <p style="margin: 0;">Welcome to my personal Blog.</p>
       <p style="margin: 0;">Here you can find projects I am, or have been working on.</p>
