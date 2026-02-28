@@ -2,7 +2,7 @@
 layout: post
 title: "Building and Testing a Custom Windows Server Lab"
 date: 2026-02-26
-permalink: /blog/building-windows-server-lab/
+permalink: /blog/how-i-built-and-broke-windows-server/
 categories: infrastructure security
 ---
 <link rel="stylesheet" href="/assets/css/blog.css">
@@ -48,7 +48,7 @@ I used a virtualized environment to ensure the lab remains isolated and secure:
     <details style="cursor: pointer; width: 100%;">
       <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
         <span><strong>The Domain Controller:</strong> Windows Server 2022</span>
-        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Setup Details</span>
+        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Details</span>
       </summary>
       <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-start;">
         <a href="https://github.com/user-attachments/assets/e2210227-c3ae-4a7f-a955-c567abbd9068" target="_blank">
@@ -101,5 +101,6 @@ To establish a stable environment, I needed to define a permanent identity for t
     <img width="495" alt="Sconfig Network Settings" src="https://github.com/user-attachments/assets/0cf1a9d1-adaf-4736-b2a3-ee3c73b0aa39" style="border-radius: 8px; border: 1px solid #333;" />
   </a>
 </div>
+&nbsp;
 
 # Phase 2: Active Directory Deployment
