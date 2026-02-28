@@ -8,7 +8,13 @@ categories: infrastructure security
 <link rel="stylesheet" href="/assets/css/blog.css">
 
 <div style="text-align: left;">
-  <h1><strong><em>Hey everyone!</em></strong></h1>
+  <h1>
+    <strong><em>Hey everyone!</em></strong>
+    <img src="https://github.com/user-attachments/assets/b4f09079-a433-4035-ac5f-6369de58e62c" 
+         style="height: 30px; position: relative; top: 7px; margin-left: 5px;" 
+         alt="emoji">
+  </h1> 
+
   <p style="font-size: 1.1rem; line-height: 1.6;">
     This project covers the entire process: from the initial server deployment and Active Directory configuration to analyzing how specific admin decisions affect the domain's security. Once the foundation is solid, I’ll move into the offensive phase—attempting to break the system and performing a penetration test to see how well it actually holds up.
   </p>
@@ -19,7 +25,7 @@ categories: infrastructure security
 The main goal was to gain hands-on experience with **Active Directory**, the backbone of most corporate networks. By building the environment myself, I was able to see how various components integrate and identify common misconfigurations that often lead to security vulnerabilities.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px;">
-                              Lab Network Forest     
+                          Lab Network Forest     
                        
                       +----------------------------------+
                       | Domain: lab.local                |
