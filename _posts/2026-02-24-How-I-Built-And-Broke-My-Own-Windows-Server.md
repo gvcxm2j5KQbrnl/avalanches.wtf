@@ -122,7 +122,7 @@ Now that the name and IP are set, it’s time to actually turn the server into a
 PS C:\> Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 </pre>
 
-2. **Promoting to Forest:** Once the tools were ready, I promoted the server to a Domain Controller for `lab.local`. This officially makes it the "boss" of the network:
+2. **Promoting to Forest:** Once the tools were ready, I promoted the server to a Domain Controller for <strong><em>lab.local</em></strong>. This officially makes it the "boss" of the network:
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$true
