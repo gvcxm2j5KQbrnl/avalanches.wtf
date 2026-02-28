@@ -5,7 +5,14 @@ date: 2026-02-26
 permalink: /blog/how-i-built-and-broke-windows-server/
 categories: infrastructure security
 ---
+<head>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://avalanches.wtf/blog/how-i-built-and-broke-windows-server/">
+<meta property="og:title" content="How I Built (And Broke) My Own Windows Server">
+<meta property="og:description" content="An inside look at how I deployed a Windows Server environment from scratch just to see if I could compromise it.">
+<meta property="og:image" content="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447">
 <link rel="stylesheet" href="/assets/css/blog.css">
+</head>
 
 <div style="text-align: left;">
   <h1>
