@@ -3,7 +3,14 @@ layout: page
 title: My Projects
 permalink: /blog/
 ---
+<head>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://avalanches.wtf/blog/">
+<meta property="og:title" content="A Journey into Infrastructure & Security">
+<meta property="og:description" content="Welcome to my personal blog. I build to break and break to build. documenting my projects across all areas of cybersecurity..">
+<meta property="og:image" content="https://avalanches.wtf/assets/web-app-manifest-512x512.png">
 <link rel="stylesheet" href="/assets/css/blog.css">
+</head>
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: -50px;">
   <div style="margin-top: 50px;">
