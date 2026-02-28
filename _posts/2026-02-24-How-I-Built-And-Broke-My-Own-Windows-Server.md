@@ -50,7 +50,7 @@ To ensure a secure and isolated testing environment, I utilized a virtualized lo
         <span><strong>The Domain Controller:</strong> Windows Server 2022 Standard Evaluation</span>
         <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Details</span>
       </summary>
-      <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-end;">
+      <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-start;">
         <a href="https://github.com/user-attachments/assets/e2210227-c3ae-4a7f-a955-c567abbd9068" target="_blank">
           <img src="https://github.com/user-attachments/assets/e2210227-c3ae-4a7f-a955-c567abbd9068" 
                alt="Windows Server 2022 Versions" 
