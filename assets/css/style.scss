@@ -75,6 +75,12 @@ margin-top: auto;
 }
 }
 
+}
+main.page-content {
+    min-height: 80vh !important; 
+    padding-bottom: 40px !important;
+}
+
 @keyframes typing { from { width: 0; } to { width: 14ch; } }
 @keyframes blink { 50% { border-color: transparent; } }
 @keyframes gradient-animation {
