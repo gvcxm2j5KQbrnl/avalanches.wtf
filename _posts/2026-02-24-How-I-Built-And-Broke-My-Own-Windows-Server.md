@@ -168,7 +168,7 @@ PS C:\> Add-ADGroupMember -Identity "Domain Admins" -Members "it_admin"
 </pre>
 
 <div style="margin-top: 20px; text-align: center;">
-  <a href="https://github.com/user-attachments/assets/dein-screenshot-id" target="_blank">
+  <a href="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447" target="_blank">
     <img width="89%" alt="AD Users and Roles" src="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447"  style="border-radius: 8px; border: 1px solid #333;" />
   </a>
   <p style="margin-top: 10px; font-style: italic; color: #666;">
