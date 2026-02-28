@@ -25,7 +25,7 @@ categories: infrastructure security
 The main goal was to gain hands-on experience with **Active Directory**, the backbone of most corporate networks. By building the environment myself, I was able to see how various components integrate and identify common misconfigurations that often lead to security vulnerabilities.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px;">
-                          Lab Network Forest     
+                               Lab Network Forest     
                        
                       +----------------------------------+
                       | Domain: lab.local                |
