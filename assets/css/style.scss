@@ -74,11 +74,19 @@ font-size: 13px;
 margin-top: auto;
 }
 }
-main.page-content {
-    min-height: 80vh !important; 
-    padding-bottom: 40px !important;
+.home-layout .container {
+    min-height: 120vh !important; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
 }
 
+.home-layout footer {
+    padding: 40px 0 20px;
+    color: #9ca3af;
+    font-size: 13px;
+    margin-top: auto;
+}
 @keyframes typing { from { width: 0; } to { width: 14ch; } }
 @keyframes blink { 50% { border-color: transparent; } }
 @keyframes gradient-animation {
