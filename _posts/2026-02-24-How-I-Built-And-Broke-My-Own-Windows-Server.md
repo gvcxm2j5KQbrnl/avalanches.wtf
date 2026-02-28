@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building and Breaching: A Custom Windows Server Lab"
+title: "How I Built (And Broke) My Own Windows Server"
 date: 2026-02-26
 permalink: /blog/how-i-built-and-broke-windows-server/
 categories: infrastructure security
