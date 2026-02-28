@@ -143,7 +143,35 @@ PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$tru
 
 A Domain Controller without users is pretty boring, so I needed to add some life to the network. I started by creating a basic structure to keep things organized.
 
-1. **Organizational Units:** I created a folder called <strong><em>Lab_Users</strong></em>. This makes it easier to manage everyone and will be useful later when I start playing around with Group Policies.
+1. **Organizational Units:** I created a folder called <strong><em>Lab_Users</em></strong>. This makes it easier to manage everyone and will be useful later when I start playing around with Group Policies.
+
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 PS C:\> New-ADOrganizationalUnit -Name "Lab_Users" -Path "DC=lab,DC=local"
 </pre>
+
+2. **Creating Test Users:** I added a few different roles to the domain. I set up a service account, a regular HR user, and an IT Admin. To make things easier, I stored the password in a variable first so I didn't have to keep re-typing it for every new account.
+
+<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
+# Storing the password for all new users
+PS C:\> $password = ConvertTo-SecureString "Password123!" -AsPlainText -Force
+
+# Creating the accounts
+PS C:\> New-ADUser -Name "SQL Service" -SamAccountName "sql_svc" -UserPrincipalName "sql_svc@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
+PS C:\> New-ADUser -Name "IT Admin" -SamAccountName "it_admin" -UserPrincipalName "it_admin@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
+PS C:\> New-ADUser -Name "HR Manager" -SamAccountName "hr_user" -UserPrincipalName "hr_user@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
+</pre>
+
+3. **Setting Up Targets:** To make the lab realistic for testing, I added the `it_admin` to the **Domain Admins** group. This gives me a high-privilege target to aim for later on.
+
+<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
+PS C:\> Add-ADGroupMember -Identity "Domain Admins" -Members "it_admin"
+</pre>
+
+<div style="margin-top: 20px; text-align: center;">
+  <a href="https://github.com/user-attachments/assets/dein-screenshot-id" target="_blank">
+    <img width="89%" alt="AD Users and Roles" src="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447"  style="border-radius: 8px; border: 1px solid #333;" />
+  </a>
+  <p style="margin-top: 10px; font-style: italic; color: #666;">
+    Successfully populated the Lab_Users OU with different roles.
+  </p>
+</div>
