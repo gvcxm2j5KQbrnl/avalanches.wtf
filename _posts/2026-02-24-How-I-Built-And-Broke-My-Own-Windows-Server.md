@@ -19,21 +19,21 @@ categories: infrastructure security
 The objective of this project was to analyze the core of corporate infrastructure: Keyword **Active Directory**. By building the domain from scratch, I gained firsthand experience in the administrative configurations required for stability—and the security oversights that lead to total domain compromise.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px;">
-                                             Graphical Diagram of Forest
-                                          
-                                         +----------------------------------+
-                                         | Domain: lab.local                |
-                                         | (Static IP Network: 10.0.0.0/24) |
-                                         +----------------+-----------------+
-                                                          |
-                                    +---------------------+---------------------+
-                                    |                     |                     |
-                          +---------+---------+ +---------+---------+ +---------+---------+
-                          |      [ DC01 ]     | |    [ WKSTN01 ]    | |    [ ATTACKER ]   |
-                          | Windows Server 22 | | Windows 11 Pro    | | Arch Linux        |
-                          | Role: Domain Ctrl | | Role: Target      | | Role: Host        |
-                          | IP: 10.0.0.10     | | IP: 10.0.0.20     | | IP: 10.0.0.50     |
-                          +-------------------+ +-------------------+ +-------------------+
+                            Graphical Diagram of Forest
+                        
+                       +----------------------------------+
+                       | Domain: lab.local                |
+                       | (Static IP Network: 10.0.0.0/24) |
+                       +----------------+-----------------+
+                                        |
+                  +---------------------+---------------------+
+                  |                     |                     |
+        +---------+---------+ +---------+---------+ +---------+---------+
+        |      [ DC01 ]     | |    [ WKSTN01 ]    | |    [ ATTACKER ]   |
+        | Windows Server 22 | | Windows 11 Pro    | | Arch Linux        |
+        | Role: Domain Ctrl | | Role: Target      | | Role: Host        |
+        | IP: 10.0.0.10     | | IP: 10.0.0.20     | | IP: 10.0.0.50     |
+        +-------------------+ +-------------------+ +-------------------+
 </pre>
 &nbsp;
 ## Lab Architecture
@@ -48,7 +48,7 @@ To ensure a secure and isolated testing environment, I utilized a virtualized lo
     <details style="cursor: pointer; width: 100%;">
       <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
         <span><strong>The Domain Controller:</strong> Windows Server 2022 Standard Evaluation</span>
-        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;"></span>
+        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">See more</span>
       </summary>
       <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-end;">
         <img src="https://github.com/user-attachments/assets/e2210227-c3ae-4a7f-a955-c567abbd9068" 
@@ -69,7 +69,7 @@ To ensure a secure and isolated testing environment, I utilized a virtualized lo
     <details style="cursor: pointer; width: 100%;">
       <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
         <span><strong>The Attacker:</strong> Arch Linux</span>
-        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;"></span>
+        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Details</span>
       </summary>
       <div style="margin-top: 15px; background: #000; border-radius: 8px; border: 1px solid #333; overflow: hidden; text-align: center;">
         <img src="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07"
