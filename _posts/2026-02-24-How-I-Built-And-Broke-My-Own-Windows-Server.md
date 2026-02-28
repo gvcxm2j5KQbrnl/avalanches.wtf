@@ -10,7 +10,7 @@ categories: infrastructure security
 <meta property="og:url" content="https://avalanches.wtf/blog/how-i-built-and-broke-windows-server/">
 <meta property="og:title" content="How I Built (And Broke) My Own Windows Server">
 <meta property="og:description" content="An inside look at how I deployed a Windows Server environment from scratch just to see if I could compromise it.">
-<meta property="og:image" content="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447">
+<meta property="og:image" content="https://avalanches.wtf/assets/web-app-manifest-512x512.png">
 <link rel="stylesheet" href="/assets/css/blog.css">
 </head>
 
