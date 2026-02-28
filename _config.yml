@@ -1,8 +1,6 @@
 title: avalanches.wtf
 theme: minima
-author: 
-  name: gvcxm2j5KQbrnl
-  avatar: "https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/logo.png"
+author: gvcxm2j5KQbrnl
 plugins:
   - jekyll-feed
 
