@@ -26,15 +26,16 @@ header .site-title:visited {
     background-size: contain !important;
     background-position: left center !important;
     color: transparent !important; 
-    display: inline-block !important;
-    width: 240px !important; 
-    height: 65px !important;  
-    margin-left: -30px !important; 
-    overflow: hidden !important;
     text-indent: -9999px !important; 
+    overflow: hidden !important;
+    display: inline-block !important;
+    width: 260px !important; 
+    height: 60px !important;  
+    margin-left: -45px !important; 
+    vertical-align: middle !important;
 }
 
 header .site-title:hover {
-    opacity: 0.7 !important;
+    opacity: 0.8 !important;
     text-decoration: none !important;
 }
