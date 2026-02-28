@@ -130,8 +130,16 @@ PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$tru
 
 <div style="margin-top: 20px; text-align: center;">
   <a href="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" target="_blank">
-    <img width="70%" alt="AD Setup Progress" src="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" style="border-radius: 8px; border: 1px solid #333;" />
+    <img width="89%" alt="AD Setup Progress" src="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" style="border-radius: 8px; border: 1px solid #333;" />
   </a>
 </div>
 
 After the command finished, the server rebooted itself to finalize everything.
+# Phase 3: Populating the Domain
+
+A Domain Controller without users is pretty boring, so I needed to add some life to the network. I started by creating a basic structure to keep things organized.
+
+1. **Organizational Units:** I created a folder called <strong><em>Lab_Users</strong></em>. This makes it easier to manage everyone and will be useful later when I start playing around with Group Policies.
+<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
+PS C:\> New-ADOrganizationalUnit -Name "Lab_Users" -Path "DC=lab,DC=local"
+</pre>
