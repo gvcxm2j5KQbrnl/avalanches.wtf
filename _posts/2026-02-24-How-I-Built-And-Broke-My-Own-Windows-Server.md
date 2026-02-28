@@ -135,7 +135,9 @@ PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$tru
 </div>
 
 After the command finished, the server rebooted itself to finalize everything.
+
 &nbsp;
+
 # Phase 3: Populating the Domain
 
 A Domain Controller without users is pretty boring, so I needed to add some life to the network. I started by creating a basic structure to keep things organized.
