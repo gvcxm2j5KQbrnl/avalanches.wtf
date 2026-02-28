@@ -19,7 +19,7 @@ categories: infrastructure security
 The objective of this project was to analyze the core of corporate infrastructure: Keyword **Active Directory**. By building the domain from scratch, I gained firsthand experience in the administrative configurations required for stability—and the security oversights that lead to total domain compromise.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px;">
-                        〿Graphical Diagram of Forest     
+                         Graphical Diagram of Forest     
                       
                      +----------------------------------+
                      | Domain: lab.local                |
