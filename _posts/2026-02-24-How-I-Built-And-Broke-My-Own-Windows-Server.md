@@ -161,7 +161,7 @@ PS C:\> New-ADUser -Name "IT Admin" -SamAccountName "it_admin" -UserPrincipalNam
 PS C:\> New-ADUser -Name "HR Manager" -SamAccountName "hr_user" -UserPrincipalName "hr_user@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
 </pre>
 
-3. **Setting Up Targets:** To make the lab realistic for testing, I added the `it_admin` to the **Domain Admins** group. This gives me a high-privilege target to aim for later on.
+3. **Setting Up Targets:** To make the lab realistic for testing, I added the <strong><em>it_admin</em></strong> to the **Domain Admins** group. This gives me a high-privilege target to aim for later on.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 PS C:\> Add-ADGroupMember -Identity "Domain Admins" -Members "it_admin"
