@@ -88,10 +88,10 @@ To ensure a secure and isolated testing environment, I utilized a virtualized lo
 ---
 &nbsp;
 # Configuration: Phase 1 Network & Identity
-A Domain Controller requires a predictable identity. Using the **SConfig** utility, I performed two critical steps:
+A Domain Controller requires a predictable identity to function. Using the **SConfig** utility, I enforced the following mandatory configurations:
 
-1. **Static IP Assignment:** Set the interface to <em><strong>10.0.0.10/24</strong></em>. This ensures that all future lab machines (Workstations, Attacker) have a reliable DNS target.
-2. **Hostname Definition:** Changed the default random string to <em><strong>DC01</strong></em>.
+1. **Static IP Enforcement:** Manually assigned <em><strong>10.0.0.10/24</strong></em> to the primary interface. This is non-negotiable for ensuring all subsequent lab nodes have a persistent DNS target.
+2. **Hostname Authority:** Overrode the default randomized string, renaming the node to <em><strong>DC01</strong></em> to align with the forest hierarchy.
 
 <div style="display: flex; gap: 10px; margin-top: 15px;">
   <a href="https://github.com/user-attachments/assets/a46a1b92-5a62-44db-93f0-b583869bf1ea" target="_blank">
