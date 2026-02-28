@@ -26,7 +26,7 @@ categories: infrastructure security
 Active Directory is pretty much everywhere in the corporate world, so I wanted to get some hands-on time with it. By building the whole thing myself, I can see how everything connects and, more importantly, what kind of small mistakes lead to a network getting compromised.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px;">
-                                 The Lab Layout     
+                                The Lab Layout     
                         
                       +----------------------------------+
                       | Domain: lab.local                |
