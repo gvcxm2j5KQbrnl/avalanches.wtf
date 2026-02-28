@@ -132,9 +132,10 @@ PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$tru
   <a href="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" target="_blank">
     <img width="89%" alt="AD Setup Progress" src="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" style="border-radius: 8px; border: 1px solid #333;" />
   </a>
+  <p style="margin-top: 10px; font-style: italic; color: #666;">
+    After the command finished, the server rebooted itself to finalize everything.
+  </p>
 </div>
-
-After the command finished, the server rebooted itself to finalize everything.
 
 &nbsp;
 
