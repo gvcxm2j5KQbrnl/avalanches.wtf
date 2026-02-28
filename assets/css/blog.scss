@@ -29,13 +29,20 @@ header .site-title:visited {
     text-indent: -9999px !important; 
     overflow: hidden !important;
     display: inline-block !important;
-    width: 262px !important; 
+    width: 240px !important; 
     height: 60px !important;  
-    margin-left: -23px !important; 
+    margin-left: -21px !important; 
     vertical-align: middle !important;
 }
 
 header .site-title:hover {
     opacity: 0.7 !important;
     text-decoration: none !important;
+}
+main.page-content {
+    min-height: 120vh !important; 
+    padding-bottom: 50px !important;
+}
+.site-footer {
+    margin-top: auto !important;
 }
