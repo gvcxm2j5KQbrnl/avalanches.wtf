@@ -82,12 +82,11 @@ To ensure a secure and isolated testing environment, I utilized a virtualized lo
 
 ---
 &nbsp;
-&nbsp;
 # Configuration: Phase 1 Network & Identity
 A Domain Controller requires a predictable identity. Using the **SConfig** utility, I performed two critical steps:
 
-1. **Static IP Assignment:** Set the interface to `10.0.0.10/24`. This ensures that all future lab machines (Workstations, Attacker) have a reliable DNS target.
-2. **Hostname Definition:** Changed the default random string to `DC01`.
+1. **Static IP Assignment:** Set the interface to <em><strong>10.0.0.10/24</strong></em>. This ensures that all future lab machines (Workstations, Attacker) have a reliable DNS target.
+2. **Hostname Definition:** Changed the default random string to <em><strong>DC01</strong></em>.
 <img width="495" height="208" alt="Sconfig screenshot 1" src="https://github.com/user-attachments/assets/a46a1b92-5a62-44db-93f0-b583869bf1ea" />
 <img width="495" height="210" alt="Sconfig screenshot 2" src="https://github.com/user-attachments/assets/0cf1a9d1-adaf-4736-b2a3-ee3c73b0aa39" />
 
