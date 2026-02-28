@@ -136,19 +136,21 @@ A Domain Controller without users is pretty boring, so I needed to add some life
 
 <ol>
   <li><strong>Organizational Units:</strong> I created a folder called <strong><em>Lab_Users</em></strong> to keep things organized.
-    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">PS C:\> New-ADOrganizationalUnit -Name "Lab_Users" -Path "DC=lab,DC=local"</pre>
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto; margin-top: 10px;">PS C:\> New-ADOrganizationalUnit -Name "Lab_Users" -Path "DC=lab,DC=local"</pre>
   </li>
-  <li><strong>Creating Test Users:</strong> I added a few different roles. To make things easier, I stored the password in a variable first.
-    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;"># Storing the password
-PS C:\> $password = ConvertTo-SecureString "Password123!" -AsPlainText -Force
 
-# Creating the accounts
+  <li style="margin-top: 20px;"><strong>Creating Test Users:</strong> I added a few different roles. To make things easier, I stored the password in a variable first:
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto; margin-top: 10px;"># Storing the password securely in a variable
+PS C:\> $password = ConvertTo-SecureString "Password123!" -AsPlainText -Force</pre>
+    <p style="margin-top: 15px;">Then, I used that variable to create the actual accounts in one go:</p>
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto; margin-top: 10px;"># Creating the accounts using the variable
 PS C:\> New-ADUser -Name "SQL Service" -SamAccountName "sql_svc" -UserPrincipalName "sql_svc@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
 PS C:\> New-ADUser -Name "IT Admin" -SamAccountName "it_admin" -UserPrincipalName "it_admin@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
 PS C:\> New-ADUser -Name "HR Manager" -SamAccountName "hr_user" -UserPrincipalName "hr_user@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true</pre>
   </li>
-  <li><strong>Setting Up Targets:</strong> I added the <strong><em>it_admin</em></strong> to the <strong><em>Domain Admins</em></strong> group for future testing.
-    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">PS C:\> Add-ADGroupMember -Identity "Domain Admins" -Members "it_admin"</pre>
+
+  <li style="margin-top: 20px;"><strong>Setting Up Targets:</strong> I added the <strong><em>it_admin</em></strong> to the <strong><em>Domain Admins</em></strong> group for future testing.
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto; margin-top: 10px;">PS C:\> Add-ADGroupMember -Identity "Domain Admins" -Members "it_admin"</pre>
   </li>
 </ol>
 
