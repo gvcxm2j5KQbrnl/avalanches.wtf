@@ -68,11 +68,7 @@ I’m running everything in a virtual environment to keep it safe and separate f
       </div>
     </details>
   </li>
-
-  <li style="margin-bottom: 15px;">
-    <strong>The Victim:</strong> Windows 10 Pro
-  </li>
-
+  <li style="margin-bottom: 15px;"><strong>The Victim:</strong> Windows 10 Pro</li>
   <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
     <details style="cursor: pointer; width: 100%;">
       <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
@@ -81,26 +77,24 @@ I’m running everything in a virtual environment to keep it safe and separate f
       </summary>
       <div style="margin-top: 15px; background: #000; border-radius: 8px; border: 1px solid #333; overflow: hidden; text-align: center;">
         <a href="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07" target="_blank">
-          <img src="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07"
-               alt="Arch Linux Info" />
+          <img src="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07" alt="Arch Linux Info" />
         </a>
       </div>
     </details>
   </li>
-
-  <li style="margin-bottom: 15px;">
-    <strong>Hypervisor:</strong> VMware Workstation / VirtualBox
-  </li>
+  <li style="margin-bottom: 15px;"><strong>Hypervisor:</strong> VMware Workstation / VirtualBox</li>
 </ul>
 
 ---
 &nbsp;
 
 # Phase 1: Basic Config
-The first thing I had to do was give the server a permanent IP and a clear name. If the IP address changes later, the whole lab breaks because nothing can find the Domain Controller. I used **SConfig** to handle the basics:
+The first thing I had to do was give the server a permanent IP and a clear name. I used **SConfig** to handle the basics:
 
-1. **Static IP:** I assigned <em><strong>10.0.0.10/24</strong></em> so the server always stays in the same spot.
-2. **Hostname:** I renamed the server to <em><strong>DC01</strong></em> so it’s easy to recognize.
+<ol>
+  <li><strong>Static IP:</strong> I assigned <em><strong>10.0.0.10/24</strong></em> so the server always stays in the same spot.</li>
+  <li><strong>Hostname:</strong> I renamed the server to <em><strong>DC01</strong></em> so it’s easy to recognize.</li>
+</ol>
 
 <div style="display: flex; gap: 10px; margin-top: 15px;">
   <a href="https://github.com/user-attachments/assets/a46a1b92-5a62-44db-93f0-b583869bf1ea" target="_blank">
@@ -116,17 +110,14 @@ The first thing I had to do was give the server a permanent IP and a clear name.
 
 Now that the name and IP are set, it’s time to actually turn the server into a Domain Controller. I used PowerShell for this because it’s a lot quicker than clicking through a bunch of menus.
 
-1. **Installing AD Tools:** I jumped into PowerShell (Option 15 in SConfig) and ran this to get the Active Directory files installed:
-
-<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
-PS C:\> Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-</pre>
-
-2. **Promoting to Forest:** Once the tools were ready, I promoted the server to a Domain Controller for <em><strong>lab.local</strong></em>. This officially makes it the "boss" of the network:
-
-<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
-PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$true
-</pre>
+<ol>
+  <li><strong>Installing AD Tools:</strong> I jumped into PowerShell (Option 15 in SConfig) and ran this to get the Active Directory files installed:
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">PS C:\> Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools</pre>
+  </li>
+  <li><strong>Promoting to Forest:</strong> Once the tools were ready, I promoted the server to a Domain Controller for <em><strong>lab.local</strong></em>.
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$true</pre>
+  </li>
+</ol>
 
 <div style="margin-top: 20px; text-align: center;">
   <a href="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" target="_blank">
@@ -141,35 +132,29 @@ PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$tru
 
 # Phase 3: Populating the Domain
 
-A Domain Controller without users is pretty boring, so I needed to add some life to the network. I started by creating a basic structure to keep things organized.
+A Domain Controller without users is pretty boring, so I needed to add some life to the network.
 
-1. **Organizational Units:** I created a folder called <strong><em>Lab_Users</em></strong>. This makes it easier to manage everyone and will be useful later when I start playing around with Group Policies.
-
-<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
-PS C:\> New-ADOrganizationalUnit -Name "Lab_Users" -Path "DC=lab,DC=local"
-</pre>
-
-2. **Creating Test Users:** I added a few different roles to the domain. I set up a service account, a regular HR user, and an IT Admin. To make things easier, I stored the password in a variable first so I didn't have to keep re-typing it for every new account.
-
-<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
-# Storing the password for all new users
+<ol>
+  <li><strong>Organizational Units:</strong> I created a folder called <strong><em>Lab_Users</em></strong> to keep things organized.
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">PS C:\> New-ADOrganizationalUnit -Name "Lab_Users" -Path "DC=lab,DC=local"</pre>
+  </li>
+  <li><strong>Creating Test Users:</strong> I added a few different roles. To make things easier, I stored the password in a variable first.
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;"># Storing the password
 PS C:\> $password = ConvertTo-SecureString "Password123!" -AsPlainText -Force
 
 # Creating the accounts
 PS C:\> New-ADUser -Name "SQL Service" -SamAccountName "sql_svc" -UserPrincipalName "sql_svc@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
 PS C:\> New-ADUser -Name "IT Admin" -SamAccountName "it_admin" -UserPrincipalName "it_admin@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
-PS C:\> New-ADUser -Name "HR Manager" -SamAccountName "hr_user" -UserPrincipalName "hr_user@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true
-</pre>
-
-3. **Setting Up Targets:** To make the lab realistic for testing, I added the <strong><em>it_admin</em></strong> to the **Domain Admins** group. This gives me a high-privilege target to aim for later on.
-
-<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
-PS C:\> Add-ADGroupMember -Identity "Domain Admins" -Members "it_admin"
-</pre>
+PS C:\> New-ADUser -Name "HR Manager" -SamAccountName "hr_user" -UserPrincipalName "hr_user@lab.local" -Path "OU=Lab_Users,DC=lab,DC=local" -AccountPassword $password -Enabled $true</pre>
+  </li>
+  <li><strong>Setting Up Targets:</strong> I added the <strong><em>it_admin</em></strong> to the **Domain Admins** group for future testing.
+    <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">PS C:\> Add-ADGroupMember -Identity "Domain Admins" -Members "it_admin"</pre>
+  </li>
+</ol>
 
 <div style="margin-top: 20px; text-align: center;">
   <a href="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447" target="_blank">
-    <img width="89%" alt="AD Users and Roles" src="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447"  style="border-radius: 8px; border: 1px solid #333;" />
+    <img width="89%" alt="AD Users and Roles" src="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447" style="border-radius: 8px; border: 1px solid #333;" />
   </a>
   <p style="margin-top: 10px; font-style: italic; color: #666;">
     Successfully populated the Lab_Users OU with different roles.
