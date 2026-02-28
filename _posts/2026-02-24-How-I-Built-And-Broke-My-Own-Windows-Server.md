@@ -11,7 +11,7 @@ categories: infrastructure security
   <h1>
     <strong><em>Hey everyone!</em></strong>
     <img src="https://github.com/user-attachments/assets/b4f09079-a433-4035-ac5f-6369de58e62c" 
-         style="height: 30px; position: relative; top: 7px; margin-left: 5px;" 
+         style="height: 30px; margin-left: 5px;" 
          alt="emoji">
   </h1> 
 
