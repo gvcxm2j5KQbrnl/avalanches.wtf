@@ -16,7 +16,7 @@ categories: infrastructure security
   </h1> 
 
   <p style="font-size: 1.1rem; line-height: 1.6;">
-    This project covers the entire process: from the initial server deployment and Active Directory configuration to analyzing how specific admin decisions affect the domain's security. Once the foundation is solid, I’ll move into the offensive phase—attempting to break the system and performing a penetration test to see how well it actually holds up.
+    This project covers the entire process: from the initial server deployment and Active Directory configuration to analyzing how specific admin decisions affect the domain's security. Once the foundation is solid, I’ll move into the offensive phase, attempting to break the system and performing a penetration test to see how well it actually holds up.
   </p>
 </div>
 &nbsp;
@@ -110,3 +110,15 @@ To establish a stable environment, I needed to define a permanent identity for t
 &nbsp;
 
 # Phase 2: Active Directory Deployment
+
+1. **Enabling AD via PowerShell:** After dropping into PowerShell from SConfig (Option 15), I ran the following command to install the necessary binaries:
+
+<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
+PS C:\> Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+</pre>
+
+2. **Forest Promotion:** Once the tools were ready, I promoted the server to a Domain Controller for the `lab.local` forest:
+
+<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
+PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$true
+</pre>
