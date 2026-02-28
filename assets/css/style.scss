@@ -11,7 +11,6 @@ font-family: Inter, Arial, sans-serif;
 text-align: center;
 display: flex;
 flex-direction: column;
-
 .container {
 max-width: 720px;
 margin: 0 auto;
@@ -32,7 +31,6 @@ background: linear-gradient(90deg, #a78bfa, #f472b6) !important;
 background-size: 300% 100%;
 animation: typing 2s steps(14) forwards, blink 0.5s step-end infinite alternate, gradient-animation 4s linear infinite;
 }
-
 .socials {
 display: flex;
 justify-content: center;
@@ -45,7 +43,6 @@ margin-bottom: 30px;
 width: 32px !important;
 height: auto !important;
 }
-
 .badge-thm-wrapper img {
 max-width: 280px;
 height: auto;
@@ -57,7 +54,6 @@ font-size: 24px;
 font-weight: 600;
 margin: 40px 0 10px;
 }
-
 .projects p {
 margin: 15px 0 !important;
 }
@@ -66,7 +62,6 @@ a {
 color: #a78bfa !important;
 text-decoration: none;
 }
-
 footer {
 padding: 40px 0 20px;
 color: #9ca3af;
@@ -74,23 +69,15 @@ font-size: 13px;
 margin-top: auto;
 }
 }
-.home-layout .container {
-    min-height: 120vh !important; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
+main.page-content {
+    min-height: 80vh !important; 
+    padding-bottom: 40px !important;
 }
 
-.home-layout footer {
-    padding: 40px 0 20px;
-    color: #9ca3af;
-    font-size: 13px;
-    margin-top: auto;
-}
 @keyframes typing { from { width: 0; } to { width: 14ch; } }
 @keyframes blink { 50% { border-color: transparent; } }
 @keyframes gradient-animation {
 0% { background-position: 0% 0%; }
 50% { background-position: 100% 0%; }
 100% { background-position: 0% 0%; }
-} 
+}
