@@ -19,3 +19,21 @@ a {
   background-color: #101010 !important;
   border: none !important;
 }
+header .site-title, 
+header .site-title:visited {
+    background-image: url("/assets/logo.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: left center !important;
+    color: rgba(0,0,0,0) !important; 
+    display: inline-block !important;
+    width: 200px !important; 
+    height: 50px !important;  
+    overflow: hidden !important;
+    text-indent: -9999px !important; 
+}
+
+header .site-title:hover {
+    opacity: 0.7 !important;
+    text-decoration: none !important;
+}
