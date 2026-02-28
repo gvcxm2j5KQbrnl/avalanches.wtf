@@ -73,8 +73,7 @@ To ensure a secure and isolated testing environment, I utilized a virtualized lo
       </summary>
       <div style="margin-top: 15px; background: #000; border-radius: 8px; border: 1px solid #333; overflow: hidden; text-align: center;">
         <img src="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07"
-             alt="Asciicinema Gif of fastfetch"
-             style="width: 80%; border-radius: 8px;" />
+             alt="Asciicinema Gif of fastfetch" />
       </div>
     </details>
   </li>
