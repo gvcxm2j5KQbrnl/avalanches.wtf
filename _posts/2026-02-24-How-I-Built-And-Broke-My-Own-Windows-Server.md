@@ -13,8 +13,9 @@ categories: infrastructure security
     In this write-up, I will demonstrate how to deploy a Windows Server environment, configure Active Directory from the ground up, and perform a penetration test to exploit common misconfigurations.
   </p>
 </div>
-
-## The Mission
+    &nbsp
+    
+### The Mission
 The objective of this project was to analyze the core of corporate infrastructure: Keyword **Active Directory**. By building the domain from scratch, I gained firsthand experience in the administrative configurations required for stability—and the security oversights that lead to total domain compromise.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px;">
@@ -34,8 +35,9 @@ The objective of this project was to analyze the core of corporate infrastructur
       | IP: 10.0.0.10     | | IP: 10.0.0.20     | | IP: 10.0.0.50     |
       +-------------------+ +-------------------+ +-------------------+
 </pre>
-
-## Lab Architecture
+ <p>&nbsp</p>
+ 
+### Lab Architecture
 To ensure a secure and isolated testing environment, I utilized a virtualized local lab:
 
 <ul style="list-style-type: none; padding: 0;">
@@ -80,6 +82,7 @@ To ensure a secure and isolated testing environment, I utilized a virtualized lo
 </ul>
 
 ---
+<p>&nbsp</p>
 
-## Technical Hurdles
+### Technical Hurdles
 During the initial deployment of the Domain Controller, I encountered a "Compatibility Report" loop while booting from the ISO. This typically happens when selecting the "Upgrade" option on a fresh virtual disk. By selecting **Custom: Install Windows only (advanced)** and targeting the unallocated 60GB drive, I successfully initiated the base OS installation.
