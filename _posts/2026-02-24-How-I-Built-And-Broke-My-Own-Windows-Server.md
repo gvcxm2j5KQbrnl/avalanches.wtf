@@ -117,8 +117,9 @@ To establish a stable environment, I needed to define a permanent identity for t
 PS C:\> Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 </pre>
 
-2. **Forest Promotion:** Once the tools were ready, I promoted the server to a Domain Controller for the `lab.local` forest:
+2. **Forest Promotion:** Once the tools were ready, I promoted the server to a Domain Controller for the <strong><em>lab.local</strong></em> forest:
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$true
 </pre>
+<img width="991" height="517" alt="Powershell AD setup" src="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" />
