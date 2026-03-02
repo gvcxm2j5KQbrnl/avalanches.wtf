@@ -30,7 +30,7 @@ categories: infrastructure security
 &nbsp;
 
 ## The Goal
-Active Directory is pretty much everywhere in the corporate world, so I wanted to get some hands-on time with it. By building the whole thing myself, I can see how everything connects and, more importantly, what kind of small mistakes lead to a network getting compromised.
+Active Directory is pretty much everywhere in the corporate world. By building the whole thing myself, I can see how everything connects and, more importantly, what kind of small mistakes lead to a network getting compromised.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px;">
                                 The Lab Layout     
@@ -75,16 +75,34 @@ I’m running everything in a virtual environment to keep it safe and separate f
       </div>
     </details>
   </li>
-  <li style="margin-bottom: 15px;"><strong>The Victim:</strong> Windows 10 Pro</li>
+  
+  <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+    <details style="cursor: pointer; width: 100%;">
+      <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
+        <span><strong>The Victim:</strong> Windows 11 Pro</span>
+        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Details</span>
+      </summary>
+      <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-start;">
+        <a href="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" target="_blank">
+          <img src="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" 
+               alt="Windows 11 Pro Setup" 
+               style="width: 250px; border-radius: 8px; border: 1px solid #333;" />
+        </a>
+      </div>
+    </details>
+  </li>
+
   <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
     <details style="cursor: pointer; width: 100%;">
       <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
         <span><strong>The Attacker:</strong> Arch Linux (Host Machine)</span>
         <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #a78bfa; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Details</span>
       </summary>
-      <div style="margin-top: 15px; background: #000; border-radius: 8px; border: 1px solid #333; overflow: hidden; text-align: center;">
+      <div style="margin-top: 15px; background: #000; border-radius: 8px; border: 1px solid #333; overflow: hidden; text-align: center; padding: 10px;">
         <a href="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07" target="_blank">
-          <img src="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07" alt="Arch Linux Info" />
+          <img src="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07" 
+               alt="Arch Linux Info" 
+               style="width: 400px; border-radius: 4px;" />
         </a>
       </div>
     </details>
@@ -114,7 +132,6 @@ The first thing I had to do was give the server a permanent IP and a clear name.
 &nbsp;
 
 # Phase 2: Active Directory Setup
-
 Now that the name and IP are set, it’s time to actually turn the server into a Domain Controller. I used PowerShell for this because it’s a lot quicker than clicking through a bunch of menus.
 
 <ol>
@@ -138,7 +155,6 @@ Now that the name and IP are set, it’s time to actually turn the server into a
 &nbsp;
 
 # Phase 3: Populating the Domain
-
 A Domain Controller without users is pretty boring, so I needed to add some life to the network.
 
 <ol>
@@ -168,4 +184,20 @@ PS C:\> New-ADUser -Name "HR Manager" -SamAccountName "hr_user" -UserPrincipalNa
   <p style="margin-top: 10px; font-style: italic; color: #666;">
     Successfully populated the Lab_Users OU with different roles.
   </p>
+</div>
+&nbsp;
+
+# Phase 4: Setting up the Workstation 
+<div style="width: 100%; border: none; padding: 0;">
+  <div style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">
+    <strong>The Victim:</strong> Windows 11 Pro (WKSTN01)
+    <p>Now that we have a system in which we can integrate and implement the users in, its time set up a Workstation.<br>
+       For this I will simulate another virtual environment using Windows 11 Pro. This machine will be joined to the lab.local domain.</p>
+  </div>
+  
+  <div style="text-align: center;">
+    <a href="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" target="_blank">
+      <img src="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" alt="Windows 11 Pro Setup" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
+    </a>
+  </div>
 </div>
