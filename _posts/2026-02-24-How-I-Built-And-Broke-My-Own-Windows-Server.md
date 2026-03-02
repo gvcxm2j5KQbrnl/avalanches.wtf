@@ -201,3 +201,55 @@ PS C:\> New-ADUser -Name "HR Manager" -SamAccountName "hr_user" -UserPrincipalNa
     </a>
   </div>
 </div>
+
+&nbsp;
+
+### Step 1: Networking & DNS Configuration
+The most critical part of joining a domain is DNS. Without pointing the Workstation to our Domain Controller, it will never find <strong><em>lab.local</em></strong>. I manually configured the IPv4 settings to use **10.0.0.10** as the primary DNS server.
+
+<div style="text-align: center; margin-top: 15px;">
+  <a href="https://github.com/user-attachments/assets/55e61ff0-4fdf-4ca1-b1b7-882b268ac611" target="_blank">
+    <img src="https://github.com/user-attachments/assets/55e61ff0-4fdf-4ca1-b1b7-882b268ac611" alt="IPv4 Configuration" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
+  </a>
+</div>
+
+&nbsp;
+
+### Step 2: Troubleshooting the Connection
+Initially, I couldn't ping the Domain Controller. This was due to two issues:
+1. **Network Isolation:** One VM was set to NAT and the other to Host-Only. I had to move both to the same **Host-Only** adapter to allow them to communicate.
+2. **Firewall Blocking:** Windows Server blocks ICMP (Ping) by default. I used the following command on the DC to enable it:
+
+<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
+PS C:\> Enable-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)"
+</pre>
+
+Once the firewall was open, the pings started flowing perfectly!
+
+<div style="text-align: center; margin-top: 15px;">
+  <a href="https://github.com/user-attachments/assets/d59f0664-c23a-4908-af53-b699a65514ec" target="_blank">
+    <img src="https://github.com/user-attachments/assets/d59f0664-c23a-4908-af53-b699a65514ec" alt="Successful Ping" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
+  </a>
+</div>
+
+&nbsp;
+
+### Step 3: Joining the Domain
+With connectivity established, it was time for the final step. I went into the system settings, changed the membership from a Workgroup to the **lab.local** domain, and authenticated with the Administrator credentials.
+
+<div style="text-align: center; margin-top: 15px;">
+  <a href="https://github.com/user-attachments/assets/6ed3ea52-d78f-475c-bb4d-3b9c2c31d462" target="_blank">
+    <img src="https://github.com/user-attachments/assets/6ed3ea52-d78f-475c-bb4d-3b9c2c31d462" alt="Domain Join Settings" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
+  </a>
+</div>
+
+&nbsp;
+
+### Success!
+The machine is now officially part of the lab. A quick reboot and a "Welcome" message later, I am ready to start testing my Active Directory users on a real target machine.
+
+<div style="text-align: center; margin-top: 15px;">
+  <a href="https://github.com/user-attachments/assets/231eb4cd-987e-46a1-91e2-51c338dafe9a" target="_blank">
+    <img src="https://github.com/user-attachments/assets/231eb4cd-987e-46a1-91e2-51c338dafe9a" alt="Welcome to Domain" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
+  </a>
+</div>
