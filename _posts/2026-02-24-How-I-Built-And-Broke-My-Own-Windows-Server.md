@@ -289,7 +289,7 @@ In a professional environment, service accounts often have weak passwords. By se
 Now that the Windows environment is "vulnerable," I need to step into the shoes of the attacker. Since my main OS is **Arch Linux**, I’m using it as the attack platform. However, there was one final hurdle: getting my host machine to talk to the isolated **Host-Only** network.
 
 ### Bringing the Attacker into the Network
-My VMs were living in the `10.0.0.0/24` subnet, but my Arch host's virtual interface (`vmnet1`) was on a completely different range. To bridge this gap, I manually assigned an IP to my host within the lab's subnet:
+My VMs were living in the <strong>10.0.0.0/24</strong> subnet, but my Arch host's virtual interface (<strong>vmnet1</strong>) was on a completely different range. To bridge this gap, I manually assigned an IP to my host within the lab's subnet:
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 $ sudo ip addr add 10.0.0.50/24 dev vmnet1
@@ -304,7 +304,7 @@ $ sudo ip addr add 10.0.0.50/24 dev vmnet1
 &nbsp;
 
 ### The Handshake
-With the IP set, I performed a simple connectivity test. Pinging the Domain Controller (`10.0.0.10`) from my Arch terminal confirmed that the "Attacker" now has a direct line of sight to the target.
+With the IP set, I performed a simple connectivity test. Pinging the Domain Controller (<strong>10.0.0.10</strong>) from my Arch terminal confirmed that the "Attacker" now has a direct line of sight to the target.
 
 <div style="text-align: center; margin-top: 15px;">
   <a href="https://github.com/user-attachments/assets/8085fe9b-3446-409a-85fb-09449d35b901" target="_blank">
@@ -315,7 +315,7 @@ With the IP set, I performed a simple connectivity test. Pinging the Domain Cont
 &nbsp;
 
 ### Mapping the Target (Nmap Scan)
-With connectivity confirmed, it was time for the first real "hacker" move: **Network Scanning**. I ran `nmap` against the Domain Controller to see exactly what services were exposed.
+With connectivity confirmed, it was time for the first real "hacker" move: **Network Scanning**. I ran <strong>nmap</strong> against the Domain Controller to see exactly what services were exposed.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 $ nmap -Pn -sV 10.0.0.10
