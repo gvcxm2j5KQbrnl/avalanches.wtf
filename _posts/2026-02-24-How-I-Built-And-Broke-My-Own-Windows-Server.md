@@ -191,7 +191,7 @@ PS C:\> New-ADUser -Name "HR Manager" -SamAccountName "hr_user" -UserPrincipalNa
 <div style="width: 100%; border: none; padding: 0;">
   <div style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">
     <strong>The Victim:</strong> Windows 11 Pro (WKSTN01)
-    <p>Now that we have a system in which we can integrate and implement the users in, its time set up a Workstation.<br>
+    <p>Now that we have a system in which we can integrate and implement the users in, its time to set up a Workstation.<br>
        For this I will simulate another virtual environment using Windows 11 Pro. This machine will be joined to the lab.local domain.</p>
   </div>
   
