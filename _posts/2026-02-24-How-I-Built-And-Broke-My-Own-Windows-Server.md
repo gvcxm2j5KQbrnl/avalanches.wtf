@@ -49,77 +49,74 @@ Active Directory is pretty much everywhere in the corporate world. By building t
        | IP: 10.0.0.10     | | IP: 10.0.0.20     | | IP: 10.0.0.50     |
        +-------------------+ +-------------------+ +-------------------+
 </pre>
+
 &nbsp;
 
 ## Lab Architecture
 I’m running everything in a virtual environment to keep it safe and separate from my main files. I'm using a **Host-Only** network, which acts as a sandbox so I don't accidentally mess with my actual home network.
 
-<ul style="list-style-type: none; padding: 0;">
-  <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
+<ul style="list-style-type: none; padding: 0; text-align: left;">
+  <li style="margin-bottom: 15px;">
+    <details class="custom-details">
+      <summary>
         <span><strong>The Domain Controller:</strong> Windows Server 2022</span>
-        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #333; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Details</span>
+        <span class="details-badge">Details</span>
       </summary>
-      <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-start;">
+      <div class="details-content">
         <a href="https://github.com/user-attachments/assets/439a70eb-71a8-4729-b230-3b21db09d276" target="_blank">
-          <img src="https://github.com/user-attachments/assets/439a70eb-71a8-4729-b230-3b21db09d276" 
-               alt="Windows Server 2022 Setup" 
-               style="width: 400px; border-radius: 8px; border: 1px solid #333;" />
+          <img src="https://github.com/user-attachments/assets/439a70eb-71a8-4729-b230-3b21db09d276" alt="DC01 Setup" class="lab-img-small" />
         </a>
       </div>
     </details>
   </li>
   
-  <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
+  <li style="margin-bottom: 15px;">
+    <details class="custom-details">
+      <summary>
         <span><strong>The Victim:</strong> Windows 11 Pro</span>
-        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #333; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Details</span>
+        <span class="details-badge">Details</span>
       </summary>
-      <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: flex-start;">
+      <div class="details-content">
         <a href="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" target="_blank">
-          <img src="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" 
-               alt="Windows 11 Pro Setup" 
-               style="width: 400px; border-radius: 8px; border: 1px solid #333;" />
+          <img src="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" alt="WKSTN01 Setup" class="lab-img-small" />
         </a>
       </div>
     </details>
   </li>
 
-  <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="list-style: none; outline: none; display: flex; align-items: center; justify-content: space-between;">
-        <span><strong>The Attacker:</strong> Arch Linux </span>
-        <span style="font-size: 0.8rem; color: #a78bfa; border: 1px solid #333; padding: 2px 8px; border-radius: 4px; margin-left: 10px;">Details</span>
+  <li style="margin-bottom: 15px;">
+    <details class="custom-details">
+      <summary>
+        <span><strong>The Attacker:</strong> Arch Linux (Host Machine)</span>
+        <span class="details-badge">Details</span>
       </summary>
-      <div style="margin-top: 15px; background: transparent; text-align: center;">
+      <div class="details-content linux-gif-wrapper">
         <a href="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07" target="_blank">
-          <img src="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07" 
-               alt="Arch Linux Info" 
-               style=" width: 60%; border-radius: 4px; border: 1px solid #333;" />
+          <img src="https://github.com/user-attachments/assets/2a71da84-c60c-4d12-bdb2-04723fdb8f07" alt="Arch Linux" class="linux-gif" />
         </a>
       </div>
     </details>
   </li>
-  <li style="margin-bottom: 15px;"><strong>Hypervisor:</strong> VMware Workstation</li>
+  <li style="margin-top: 10px;"><strong>Hypervisor:</strong> VMware Workstation</li>
 </ul>
 
 ---
+
 &nbsp;
 
 # Phase 1: Basic Config
 The first thing I had to do was give the server a permanent IP and a clear name. In AD, if your IP shifts around, everything breaks. I used **SConfig** to handle the basics:
 
-<ol>
+<ol style="text-align: left;">
   <li><strong>Static IP:</strong> I assigned <em><strong>10.0.0.10/24</strong></em> so the server is always found at the same address.</li>
   <li><strong>Hostname:</strong> I renamed it to <em><strong>DC01</strong></em> to keep things clean.</li>
 </ol>
 
-<div style="display: flex; gap: 10px; margin-top: 15px;">
-  <img width="495" alt="Sconfig Name" src="https://github.com/user-attachments/assets/a46a1b92-5a62-44db-93f0-b583869bf1ea" style="border-radius: 8px; border: 1px solid #333;" />
-  <img width="495" alt="Sconfig IP" src="https://github.com/user-attachments/assets/0cf1a9d1-adaf-4736-b2a3-ee3c73b0aa39" style="border-radius: 8px; border: 1px solid #333;" />
+<div style="display: flex; gap: 10px; margin-top: 15px; justify-content: flex-start;">
+  <img width="48%" src="https://github.com/user-attachments/assets/a46a1b92-5a62-44db-93f0-b583869bf1ea" style="border-radius: 8px; border: 1px solid #333;" />
+  <img width="48%" src="https://github.com/user-attachments/assets/0cf1a9d1-adaf-4736-b2a3-ee3c73b0aa39" style="border-radius: 8px; border: 1px solid #333;" />
 </div>
+
 &nbsp;
 
 # Phase 2: Active Directory Setup
@@ -129,8 +126,8 @@ Now for the actual core: turning the server into a Domain Controller. I used Pow
 PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$true
 </pre>
 
-<div style="margin-top: 20px; text-align: center;">
-  <img width="89%" alt="AD Setup Progress" src="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" style="border-radius: 8px; border: 1px solid #333;" />
+<div style="margin-top: 20px; text-align: left;">
+  <img width="90%" src="https://github.com/user-attachments/assets/2ca0371e-b478-4b37-8af6-bd6c3d5d9663" style="border-radius: 8px; border: 1px solid #333;" />
   <p style="margin-top: 10px; font-style: italic; color: #666;">
     After a reboot, the server officially became the master of lab.local.
   </p>
@@ -141,108 +138,83 @@ PS C:\> Install-ADDSForest -DomainName "lab.local" -InstallDns:$true -Force:$tru
 # Phase 3: Populating the Domain
 A DC without users is a ghost town. I created an **Organizational Unit (OU)** called <em>Lab_Users</em> and populated it with different roles: an IT admin, a manager, and a SQL service account.
 
-<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
-# Creating the accounts and a Domain Admin for future testing
-PS C:\> New-ADUser -Name "IT Admin" -SamAccountName "it_admin" ...
-PS C:\> Add-ADGroupMember -Identity "Domain Admins" -Members "it_admin"
-</pre>
-
-<div style="margin-top: 20px; text-align: center;">
-  <img width="89%" alt="AD Users and Roles" src="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447" style="border-radius: 8px; border: 1px solid #333;" />
+<div style="margin-top: 20px; text-align: left;">
+  <img width="90%" src="https://github.com/user-attachments/assets/7cdd01e9-4afb-4db8-b73f-0c4eb3db1447" style="border-radius: 8px; border: 1px solid #333;" />
 </div>
 
 &nbsp;
 
 # Phase 4: Setting up the Workstation 
-<div style="width: 100%; border: none; padding: 0;">
-  <div style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">
-    <strong>The Victim:</strong> Windows 11 Pro (WKSTN01)
-    <p>Now I needed a machine to join to the domain. If DNS isn't pointed exactly at the DC (10.0.0.10), the join fails immediately. After some troubleshooting with the firewall and network adapters, it finally worked.</p>
-  </div>
-  
-  <div style="text-align: center;">
-    <img src="https://github.com/user-attachments/assets/55e61ff0-4fdf-4ca1-b1b7-882b268ac611" alt="IPv4 Configuration" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
-  </div>
-</div>
+The workstation join is the final "Build" test. If DNS isn't pointed exactly at 10.0.0.10, the join fails immediately. After opening the ICMP firewall on the DC, the pings and the join worked.
 
-&nbsp;
-
-### Joining & Success
-Joining the domain feels like the final "Build" boss. Once I authenticated with the Admin credentials, I got the welcome message. The lab was officially alive.
-
-<div style="text-align: center; margin-top: 15px;">
-  <img src="https://github.com/user-attachments/assets/231eb4cd-987e-46a1-91e2-51c338dafe9a" alt="Welcome to Domain" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
+<div style="text-align: left; margin-top: 15px;">
+  <img src="https://github.com/user-attachments/assets/231eb4cd-987e-46a1-91e2-51c338dafe9a" alt="Welcome to Domain" style="width: 100%; max-width: 700px; border-radius: 8px; border: 1px solid #333;" />
 </div>
 
 &nbsp;
 
 # Phase 5: Vulnerability Engineering
-With the foundation solid, the "Building" part is over. Now I have to intentionally weaken the security to simulate real-world mistakes. My first target: **Kerberoasting**. I assigned a **Service Principal Name (SPN)** to the SQL account.
+With the foundation solid, it's time to intentionally weaken the security. My first target: **Kerberoasting**. I assigned a **Service Principal Name (SPN)** to the SQL account.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 PS C:\> setspn -a MSSQLSvc/sql01.lab.local:1433 sql_svc
 </pre>
 
-<div style="text-align: center; margin-top: 15px;">
-  <img src="https://github.com/user-attachments/assets/27f104f3-7fd7-4901-9951-25bdc46660ae" alt="Set SPN Command" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
-  <p style="margin-top: 10px; font-style: italic; color: #666;">
-    Registered the SPN. The lab is now officially "vulnerable".
-  </p>
+<div style="text-align: left; margin-top: 15px;">
+  <img src="https://github.com/user-attachments/assets/27f104f3-7fd7-4901-9951-25bdc46660ae" alt="Set SPN" style="width: 100%; max-width: 700px; border-radius: 8px; border: 1px solid #333;" />
 </div>
 
 &nbsp;
 
 # Phase 6: Reconnaissance & Entry
-Time to step into the boots of an attacker. Since my main OS is **Arch Linux**, I’m using it as the attack platform. I had to manually assign an IP to my host's virtual interface to bridge into the lab's subnet.
+Time to step into the boots of an attacker. From my **Arch Linux** host, I manually assigned an IP to bridge into the lab's subnet.
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 $ sudo ip addr add 10.0.0.50/24 dev vmnet1
 </pre>
 
 ### Mapping the Target
-I ran a full **Nmap** scan against the DC to see what services were exposed. 
+An **Nmap** scan against the DC confirmed the "vulnerabilities". Port 88 (Kerberos) is open and waiting.
 
-<div style="text-align: center; margin-top: 15px;">
-  <img src="https://github.com/user-attachments/assets/adb6991a-5ba1-43bb-b30c-d656d589f444" alt="Nmap Scan Results" style="width: 800px; border-radius: 8px; border: 1px solid #333;" />
+<div style="text-align: left; margin-top: 15px;">
+  <img src="https://github.com/user-attachments/assets/adb6991a-5ba1-43bb-b30c-d656d589f444" alt="Nmap Results" style="width: 100%; max-width: 800px; border-radius: 8px; border: 1px solid #333;" />
 </div>
 
 &nbsp;
 
 ### The Loot: Important Ports
-The scan results confirmed that the DC is broadcasting its roles. These are the main entry points for AD attacks:
+These are the main entry points for the upcoming AD attacks:
 
-<table style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #333; font-size: 0.95rem;">
-  <tr style="background-color: #1e1e1e; color: #a78bfa;">
-    <th style="padding: 10px; border: 1px solid #333; text-align: left;">Port</th>
-    <th style="padding: 10px; border: 1px solid #333; text-align: left;">Service</th>
-    <th style="padding: 10px; border: 1px solid #333; text-align: left;">Pentest Use</th>
+<table class="port-loot-table">
+  <tr class="table-header">
+    <th>Port</th>
+    <th>Service</th>
+    <th>Pentest Use</th>
   </tr>
   <tr>
-    <td style="padding: 8px; border: 1px solid #333;"><strong>53</strong></td>
-    <td style="padding: 8px; border: 1px solid #333;">DNS</td>
-    <td style="padding: 8px; border: 1px solid #333;">Enumerating hosts in the domain.</td>
+    <td><strong>53</strong></td>
+    <td>DNS</td>
+    <td>Enumerating hosts in the domain.</td>
   </tr>
   <tr>
-    <td style="padding: 8px; border: 1px solid #333;"><strong>88</strong></td>
-    <td style="padding: 8px; border: 1px solid #333;">Kerberos</td>
-    <td style="padding: 8px; border: 1px solid #333;">Kerberoasting & AS-REP Roasting.</td>
+    <td><strong>88</strong></td>
+    <td>Kerberos</td>
+    <td>Kerberoasting & AS-REP Roasting.</td>
   </tr>
   <tr>
-    <td style="padding: 8px; border: 1px solid #333;"><strong>445</strong></td>
-    <td style="padding: 8px; border: 1px solid #333;">SMB</td>
-    <td style="padding: 8px; border: 1px solid #333;">Lateral movement & file shares.</td>
+    <td><strong>445</strong></td>
+    <td>SMB</td>
+    <td>Lateral movement & file shares.</td>
   </tr>
   <tr>
-    <td style="padding: 8px; border: 1px solid #333;"><strong>389</strong></td>
-    <td style="padding: 8px; border: 1px solid #333;">LDAP</td>
-    <td style="padding: 8px; border: 1px solid #333;">AD database queries.</td>
+    <td><strong>389</strong></td>
+    <td>LDAP</td>
+    <td>AD database queries.</td>
   </tr>
 </table>
-
-&nbsp;
 
 ---
 &nbsp;
 
 ## What's Next?
-The reconnaissance is done. I have a map of the target, and I know exactly where the vulnerabilities lie. In the next post, I’ll finally pull the trigger on the **Kerberoasting** attack using Impacket to grab that service account hash. Stay tuned!
+The infrastructure is built. In the next post, I’ll pull the trigger on the **Kerberoasting** attack using Impacket to snatch the hash. Stay tuned!
