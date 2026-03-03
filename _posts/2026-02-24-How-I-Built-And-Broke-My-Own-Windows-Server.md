@@ -279,13 +279,11 @@ PS C:\> setspn -a MSSQLSvc/sql01.lab.local:1433 sql_svc
 
 ### Why this matters
 In a professional environment, service accounts often have weak passwords. By setting this SPN, I've created a path for an attacker to move from a standard user to cracking a service account password without even touching the Domain Controller directly.
-&nbsp;
 
 ---
 
 &nbsp;
 
-&nbsp;
 
 # Phase 6: Reconnaissance & Connectivity
 Now that the Windows environment is "vulnerable," I need to step into the shoes of the attacker. Since my main OS is **Arch Linux**, I’m using it as the attack platform. However, there was one final hurdle: getting my host machine to talk to the isolated **Host-Only** network.
