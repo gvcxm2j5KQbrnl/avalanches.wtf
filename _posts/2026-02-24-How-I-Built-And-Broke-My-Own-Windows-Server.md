@@ -256,3 +256,34 @@ The machine is now officially part of the lab. A quick reboot and a "Welcome" me
 &nbsp;
 
 ### Phase 5: Soon 
+
+&nbsp;
+
+# Phase 5: Vulnerability Engineering
+Now that the foundation is solid and the workstation is joined, the "Building" part is over. It’s time to intentionally weaken the security of this domain to simulate real-world misconfigurations. My first target: **Kerberoasting**.
+
+### Setting the Bait (SPN)
+Hacker look for accounts with a **Service Principal Name (SPN)** because these accounts can be "roasted" to request Kerberos tickets, which can then be cracked offline. I assigned a fake SQL service name to the <strong><em>sql_svc</em></strong> user I created earlier:
+
+<pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
+PS C:\> setspn -a MSSQLSvc/sql01.lab.local:1433 sql_svc
+</pre>
+
+<div style="text-align: center; margin-top: 15px;">
+  <a href="https://github.com/user-attachments/assets/27f104f3-7fd7-4901-9951-25bdc46660ae" target="_blank">
+    <img src="https://github.com/user-attachments/assets/27f104f3-7fd7-4901-9951-25bdc46660ae" alt="Set SPN Command" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
+  </a>
+  <p style="margin-top: 10px; font-style: italic; color: #666;">
+    Successfully registered the SPN. The lab is now officially "vulnerable".
+  </p>
+</div>
+
+&nbsp;
+
+### Why this matters
+In a professional environment, service accounts often have weak passwords. By setting this SPN, I've created a path for an attacker to move from a standard user to cracking a service account password without even touching the Domain Controller directly.
+
+---
+
+## What's Next?
+The lab is live, isolated on its own <strong>Host-Only</strong> network, and intentionally misconfigured. In the next post, I'll fire up my <strong>Arch Linux</strong> machine and start the actual penetration test. We'll see if we can catch some hashes and crack that SQL service password!
