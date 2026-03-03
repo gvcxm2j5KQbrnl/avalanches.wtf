@@ -87,7 +87,7 @@ I’m running everything in a virtual environment to keep it safe and separate f
         <a href="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" target="_blank">
           <img src="https://github.com/user-attachments/assets/c6893e2e-3da9-4d32-b305-31fad852f967" 
                alt="Windows 11 Pro Setup" 
-               style="width: 500px; border-radius: 8px; border: 1px solid #333;" />
+               style="width: 250px; border-radius: 8px; border: 1px solid #333;" />
         </a>
       </div>
     </details>
@@ -108,7 +108,7 @@ I’m running everything in a virtual environment to keep it safe and separate f
       </div>
     </details>
   </li>
-  <li style="margin-bottom: 15px;"><strong>Hypervisor:</strong> VMware Workstation / VirtualBox</li>
+  <li style="margin-bottom: 15px;"><strong>Hypervisor:</strong> VMware Workstation</li>
 </ul>
 
 ---
@@ -327,7 +327,7 @@ $ nmap -Pn -sV 10.0.0.10
 &nbsp;
 
 ### The Loot: Important Ports
-The scan results confirmed that the DC is broadcasting its roles. These are the main entry points for AD attacks:
+The scan confirmed these main entry points for the upcoming AD attacks:
 
 <table style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #333; font-size: 0.95rem;">
   <tr style="background-color: #1e1e1e; color: #a78bfa;">
@@ -356,8 +356,6 @@ The scan results confirmed that the DC is broadcasting its roles. These are the 
     <td style="padding: 8px; border: 1px solid #333;">AD database queries.</td>
   </tr>
 </table>
-
-&nbsp;
 
 ---
 &nbsp;
