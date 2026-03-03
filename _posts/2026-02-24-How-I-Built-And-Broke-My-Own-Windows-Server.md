@@ -282,5 +282,6 @@ In a professional environment, service accounts often have weak passwords. By se
 &nbsp;
 
 ---
+&nbsp;
 ## What's Next?
 The lab is live, isolated on its own <strong>Host-Only</strong> network, and intentionally misconfigured. In the next post, I'll fire up my <strong>Arch Linux</strong> machine and start the actual penetration test. We'll see if we can catch some hashes and crack that SQL service password!
