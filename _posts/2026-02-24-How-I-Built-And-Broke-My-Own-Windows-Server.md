@@ -253,9 +253,6 @@ The machine is now officially part of the lab. A quick reboot and a "Welcome" me
     <img src="https://github.com/user-attachments/assets/231eb4cd-987e-46a1-91e2-51c338dafe9a" alt="Welcome to Domain" style="width: 650px; border-radius: 8px; border: 1px solid #333;" />
   </a>
 </div>
-&nbsp;
-
-### Phase 5: Soon 
 
 &nbsp;
 
