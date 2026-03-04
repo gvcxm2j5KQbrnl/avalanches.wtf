@@ -68,11 +68,6 @@ I’m running everything in a virtual environment to keep it safe and separate f
                alt="Windows Server 2022 Setup" 
                style="width: 500px; border-radius: 8px; border: 1px solid #333;" />
         </a>
-        <a href="https://github.com/user-attachments/assets/720145a4-85fe-476e-b530-cccdbebf91b5" target="_blank">
-          <img src="https://github.com/user-attachments/assets/720145a4-85fe-476e-b530-cccdbebf91b5" 
-               alt="Storage" 
-               style="width: 250px; border-radius: 8px; border: 1px solid #333;" />
-        </a>
       </div>
     </details>
   </li>
