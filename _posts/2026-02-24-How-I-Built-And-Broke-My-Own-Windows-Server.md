@@ -362,29 +362,31 @@ $ nmap -Pn -sV 10.0.0.10
 **Kerberoasting** is a post-exploitation technique used to extract service account password hashes from Active Directory for offline cracking.
 
 ### 1. Requesting the Ticket
-Since I gave the <strong>it_admin</strong> the same password during the setup in Phase 3 (a common real-world mistake called password reuse), I can use those credentials to request a Kerberos service ticket (TGS) for the SQL service.
+Since I gave the <strong>it_admin</strong> the same password during the setup in Phase 3, I can use those credentials to request a Kerberos service ticket for the SQL service.
+
+
 
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
-$ GetUserSPNs.py lab.local/it_admin:Password123! -dc-ip 10.0.0.10 -request
+$ GetUserSPNs.py lab.local/it_admin:R00tMe!2022 -dc-ip 10.0.0.10 -request
 </pre>
-
-
 
 ### 2. The Captured Hash
 The Domain Controller trusts my admin user and sends back a ticket. This ticket is encrypted with the password hash of the <strong>sql_svc</strong> account. Impacket extracts this into a format that cracking tools can understand.
 
 <div style="background: #1a1a1a; border: 1px solid #444; padding: 15px; border-radius: 5px; color: #f87171; font-family: monospace; overflow-x: auto;">
-$krb5tgs$18$sql_svc$lab.local$MSSQLSvc/sql01.lab.local:1433*... [Redacted]
+$krb5tgs$18$sql_svc$lab.local$MSSQLSvc/sql01.lab.local:1433*...
 </div>
 
 ### 3. Cracking the Hash
 I saved the hash to <strong>hash.txt</strong>. By cracking this offline, I don't risk triggering any account lockout policies on the Domain Controller.
 
+
+
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 $ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 </pre>
 
-**Success!** The plain-text password was revealed: <strong>Password123!</strong>.
+**Success!** The plain-text password was revealed: <strong>R00tMe!2022</strong>.
 
 &nbsp;
 ## Final Thoughts
