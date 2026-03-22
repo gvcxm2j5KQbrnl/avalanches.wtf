@@ -4,10 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-[← My Projects](/blog/)
-
----
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://avalanches.wtf/about/">
 <meta property="og:title" content="About Me">
