@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-permalink: /blog/
+permalink: /about/
 ---
 
 <meta property="og:type" content="website">
