@@ -11,3 +11,5 @@ permalink: /about/
 <link rel="stylesheet" href="/assets/css/blog.css">
 
 Hi.
+
+This is actually still in progress, check back later!
