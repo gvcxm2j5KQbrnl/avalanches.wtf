@@ -12,6 +12,6 @@ header_pages:
 <meta property="og:image" content="https://avalanches.wtf/assets/web-app-manifest-512x512.png">
 <link rel="stylesheet" href="/assets/css/blog.css">
 
-<h1>Hi.</h1>
+<strong>Hi.</strong>
 <p>This is actually still in progress, check back later!</p>
 
