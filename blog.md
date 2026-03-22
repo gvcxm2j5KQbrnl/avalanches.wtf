@@ -4,7 +4,6 @@ title: My Projects
 permalink: /blog/
 header_pages: - about.md
 ---
-
 <head>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://avalanches.wtf/blog/">
