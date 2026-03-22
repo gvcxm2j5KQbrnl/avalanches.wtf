@@ -3,7 +3,9 @@
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     <nav class="site-nav">
       <div class="trigger">
-        {% if page.url == "/about/" %}
+        {% if page.layout == "post" %}
+          <a class="page-link" href="{{ "/blog/" | relative_url }}">My Projects</a>
+        {% elsif page.url == "/about/" %}
           <a class="page-link" href="{{ "/blog/" | relative_url }}">My Projects</a>
         {% elsif page.url == "/blog/" %}
           <a class="page-link" href="{{ "/about/" | relative_url }}">About Me</a>
