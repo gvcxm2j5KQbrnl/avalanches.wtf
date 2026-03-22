@@ -5,6 +5,4 @@ plugins:
   - jekyll-feed
 
 permalink: /blog/:title/
-header_pages:
-  - about.md
-  - blog.md
+header_pages: []
