@@ -3,7 +3,7 @@ layout: page
 title: About Me
 permalink: /about/
 header_pages:
-  - blogs.md
+  - blog.md
 ---
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://avalanches.wtf/about/">
