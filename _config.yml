@@ -5,3 +5,5 @@ plugins:
   - jekyll-feed
 
 permalink: /blog/:title/
+header_pages:
+  - x.md
