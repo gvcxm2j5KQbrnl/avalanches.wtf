@@ -1,7 +1,7 @@
 ---
 layout: page
 title: My Projects
-permalink: /about/
+permalink: /blog/
 header_pages:
   - about.md
 ---
