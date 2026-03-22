@@ -7,4 +7,4 @@ plugins:
 permalink: /blog/:title/
 header_pages:
   - about.md
-  - blogs.md
+  - blog.md
