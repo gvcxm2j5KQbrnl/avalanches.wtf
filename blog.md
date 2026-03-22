@@ -3,7 +3,7 @@ layout: page
 title: My Projects
 permalink: /blog/
 header_pages:
-  - about.md
+  - /about/
 ---
 
 <head>
