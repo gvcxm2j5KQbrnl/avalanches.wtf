@@ -3,7 +3,7 @@ layout: page
 title: About Me
 permalink: /about/
 header_pages:
-  - blog.md
+  - blogs.md
 ---
 
 <meta property="og:type" content="website">
