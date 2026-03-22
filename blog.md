@@ -2,7 +2,8 @@
 layout: page
 title: My Projects
 permalink: /blog/
-header_pages: - about.md
+header_pages:
+-about.md
 ---
 <head>
 <meta property="og:type" content="website">
