@@ -377,6 +377,7 @@ The Domain Controller trusts my admin user and sends back a ticket. This ticket 
 $krb5tgs$18$sql_svc$lab.local$MSSQLSvc/sql01.lab.local:1433*...
 </div>
 
+&nbsp;
 ### 3. Cracking the Hash
 I saved the hash to <strong>hash.txt</strong>. By cracking this offline, I don't risk triggering any account lockout policies on the Domain Controller.
 
