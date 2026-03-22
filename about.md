@@ -5,7 +5,6 @@ permalink: /about/
 header_pages:
   - blogs.md
 ---
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://avalanches.wtf/about/">
 <meta property="og:title" content="About Me">
@@ -13,6 +12,6 @@ header_pages:
 <meta property="og:image" content="https://avalanches.wtf/assets/web-app-manifest-512x512.png">
 <link rel="stylesheet" href="/assets/css/blog.css">
 
-Hi.
+<h1>Hi.</h1>
+<p>This is actually still in progress, check back later!</p>
 
-This is actually still in progress, check back later!
