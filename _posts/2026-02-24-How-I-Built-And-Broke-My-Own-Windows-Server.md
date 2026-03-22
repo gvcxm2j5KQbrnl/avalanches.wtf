@@ -388,9 +388,14 @@ $ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 
 &nbsp;
 ## Final Thoughts
-Building this lab from scratch was the best way to understand Active Directory. It showed me that security isn't just about having a firewall, it's about the small configurations, the service accounts, and the human errors. I really enjoyed setting up this environment and can't wait for future projects of this kind.
+<p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">
+  Building this lab from scratch was the best way to understand Active Directory. It showed me that security isn't just about having a firewall, it's about the small configurations, the service accounts, and the human errors. I really enjoyed setting up this environment and can't wait for future projects of this kind.
+</p>
 
-&nbsp;See ya next time!
-<img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/863524741295a714c3f85e30d62f000adee4f024/assets/512.gif" 
-     style="height: 30px; position: relative; bottom: 2px; margin-left: 2px;" 
-     alt="emoji">
+&nbsp;
+<p style="margin-bottom: 5px;">
+  <strong>See ya next time!</strong>
+  <img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/863524741295a714c3f85e30d62f000adee4f024/assets/512.gif" 
+       style="height: 30px; position: relative; bottom: 2px; margin-left: 2px;" 
+       alt="emoji">
+</p>
