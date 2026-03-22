@@ -1,0 +1,17 @@
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <nav class="site-nav">
+      <div class="trigger">
+        {% if page.url == "/about/" %}
+          <a class="page-link" href="{{ "/blog/" | relative_url }}">My Projects</a>
+        {% elsif page.url == "/blog/" %}
+          <a class="page-link" href="{{ "/about/" | relative_url }}">About Me</a>
+        {% else %}
+          <a class="page-link" href="{{ "/about/" | relative_url }}">About Me</a>
+          <a class="page-link" href="{{ "/blog/" | relative_url }}">My Projects</a>
+        {% endif %}
+      </div>
+    </nav>
+  </div>
+</header>
