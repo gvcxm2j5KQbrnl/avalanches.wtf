@@ -4,5 +4,4 @@ title: About Me
 permalink: /about/
 ---
 
-# About Me
 Hi. 
