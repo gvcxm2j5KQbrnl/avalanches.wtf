@@ -380,13 +380,17 @@ $krb5tgs$18$sql_svc$lab.local$MSSQLSvc/sql01.lab.local:1433*... [Redacted]
 ### 3. Cracking the Hash
 I saved the hash to <strong>hash.txt</strong>. By cracking this offline, I don't risk triggering any account lockout policies on the Domain Controller.
 
-
-
 <pre style="font-family: monospace; line-height: 1.2; background: #1e1e1e; padding: 20px; color: #a78bfa; border: 1px solid #333; border-radius: 5px; overflow-x: auto;">
 $ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 </pre>
 
 **Success!** The plain-text password was revealed: <strong>Password123!</strong>.
 
+&nbsp;
 ## Final Thoughts
-Building this lab from scratch was the best way to understand Active Directory. It showed me that security isn't just about having a firewall, it's about the small configurations, the service accounts, and the human errors.
+Building this lab from scratch was the best way to understand Active Directory. It showed me that security isn't just about having a firewall, it's about the small configurations, the service accounts, and the human errors. I really enjoyed setting up this environment and can't wait for future projects of this kind.
+
+&nbsp;See ya next time!
+<img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/863524741295a714c3f85e30d62f000adee4f024/assets/512.gif" 
+     style="height: 30px; position: relative; bottom: 2px; margin-left: 2px;" 
+     alt="emoji">
