@@ -321,35 +321,39 @@ $ nmap -Pn -sV 10.0.0.10
 
 &nbsp;
 
-### The Loot: Important Ports
-The scan confirmed these main entry points for the upcoming AD attacks:
+<h3 id="the-loot">The Loot: Important Ports</h3>
+<p>The scan confirmed these main entry points for the upcoming AD attacks:</p>
 
-<table style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #333; font-size: 0.95rem;">
-  <tr style="background-color: #1e1e1e; color: #a78bfa;">
-    <th style="padding: 10px; border: 1px solid #333; text-align: left;">Port</th>
-    <th style="padding: 10px; border: 1px solid #333; text-align: left;">Service</th>
-    <th style="padding: 10px; border: 1px solid #333; text-align: left;">Pentest Use</th>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 1px solid #333;"><strong>53</strong></td>
-    <td style="padding: 8px; border: 1px solid #333;">DNS</td>
-    <td style="padding: 8px; border: 1px solid #333;">Enumerating hosts in the domain.</td>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 1px solid #333;"><strong>88</strong></td>
-    <td style="padding: 8px; border: 1px solid #333;">Kerberos</td>
-    <td style="padding: 8px; border: 1px solid #333;">Kerberoasting & AS-REP Roasting.</td>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 1px solid #333;"><strong>445</strong></td>
-    <td style="padding: 8px; border: 1px solid #333;">SMB</td>
-    <td style="padding: 8px; border: 1px solid #333;">Lateral movement & file shares.</td>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 1px solid #333;"><strong>389</strong></td>
-    <td style="padding: 8px; border: 1px solid #333;">LDAP</td>
-    <td style="padding: 8px; border: 1px solid #333;">AD database queries.</td>
-  </tr>
+<table style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #444; font-size: 0.95rem; background-color: #1e1e1e;">
+  <thead>
+    <tr style="background-color: #a78bfa; color: #1a1a1a;">
+      <th style="padding: 12px; border: 1px solid #444; text-align: left;">Port</th>
+      <th style="padding: 12px; border: 1px solid #444; text-align: left;">Service</th>
+      <th style="padding: 12px; border: 1px solid #444; text-align: left;">Pentest Use</th>
+    </tr>
+  </thead>
+  <tbody style="background-color: #1e1e1e;">
+    <tr style="color: #ffffff;">
+      <td style="padding: 10px; border: 1px solid #444;"><strong>53</strong></td>
+      <td style="padding: 10px; border: 1px solid #444;">DNS</td>
+      <td style="padding: 10px; border: 1px solid #444;">Enumerating hosts in the domain.</td>
+    </tr>
+    <tr style="color: #ffffff;">
+      <td style="padding: 10px; border: 1px solid #444;"><strong>88</strong></td>
+      <td style="padding: 10px; border: 1px solid #444;">Kerberos</td>
+      <td style="padding: 10px; border: 1px solid #444;">Kerberoasting &amp; AS-REP Roasting.</td>
+    </tr>
+    <tr style="color: #ffffff;">
+      <td style="padding: 10px; border: 1px solid #444;"><strong>445</strong></td>
+      <td style="padding: 10px; border: 1px solid #444;">SMB</td>
+      <td style="padding: 10px; border: 1px solid #444;">Lateral movement &amp; file shares.</td>
+    </tr>
+    <tr style="color: #ffffff;">
+      <td style="padding: 10px; border: 1px solid #444;"><strong>389</strong></td>
+      <td style="padding: 10px; border: 1px solid #444;">LDAP</td>
+      <td style="padding: 10px; border: 1px solid #444;">AD database queries.</td>
+    </tr>
+  </tbody>
 </table>
 
 ---
