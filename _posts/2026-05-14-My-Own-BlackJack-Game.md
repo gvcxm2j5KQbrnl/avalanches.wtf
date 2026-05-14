@@ -14,14 +14,14 @@ categories: programming
 <link rel="stylesheet" href="/assets/css/blog.css">
 </head>
 
-<div style="text-align: left;">
-  <h1>
-    <div title="For those that do not speak russian (me included) the headline reads "Hello friends""><strong><em>Привет друзья!</em></strong>
-    <img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/513.gif" 
-         style="height: 30px; position: relative; bottom: 2px; margin-left: 2px;" 
-         alt="emoji">
-  </h1> </div>
-
+<div title="For those that do not speak russian (me included) the headline reads 'Hello friends'">
+  <h2 style="display: flex; align-items: center; gap: 10px;">
+    <strong><em>Привет друзья!</em></strong>
+    <img src="[https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/513.gif](https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/513.gif)" 
+         alt="money face gif" 
+         style="height: 35px;">
+  </h2>
+</div>
   <p style="font-size: 1.1rem; line-height: 1.6;">
     
     
