@@ -4,26 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="BlackJack" />
-  <meta property="og:type" content="website" />
   <meta property="og:description" content="Blackjack">
   <meta name="theme-color" content="#101010">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>BlackJack</title>
 
   <link rel="icon" type="image/png" href="https://avalanches.wtf/assets/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="https://avalanches.wtf/assets/favicon.svg" />
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      margin: 0;
-      padding: 0;
       background: #101010;
-      color: #ffffff;
-      font-family: 'Inter', system-ui, sans-serif;
-      height: 100vh;
+      color: #f2f2f2;
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
@@ -36,47 +35,50 @@
     }
 
     h1 {
-      font-size: 4.5rem;
-      margin: 0 0 0.5rem 0;
-      letter-spacing: -2px;
+      font-size: 4.8rem;
+      font-weight: 600;
+      letter-spacing: -3px;
+      margin-bottom: 0.8rem;
     }
 
     .subtitle {
-      font-size: 1.3rem;
-      opacity: 0.7;
-      margin-bottom: 3rem;
+      font-size: 1.35rem;
+      opacity: 0.75;
+      margin-bottom: 2.5rem;
     }
 
-    .coming-soon {
+    .under-construction {
       font-size: 1.1rem;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
+      font-weight: 500;
       opacity: 0.6;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
-    .play-btn {
+    .soon-btn {
       display: inline-block;
-      padding: 1rem 2.5rem;
       background: #ffffff;
       color: #101010;
-      font-size: 1.3rem;
-      font-weight: 500;
+      padding: 14px 36px;
       border-radius: 9999px;
+      font-size: 1.25rem;
+      font-weight: 500;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
-    .play-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    .soon-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     }
 
     footer {
       position: absolute;
       bottom: 2rem;
+      color: #9ca3af;
       font-size: 0.9rem;
-      opacity: 0.4;
+      opacity: 0.8;
     }
   </style>
 </head>
@@ -85,12 +87,14 @@
     <h1 id="title">BlackJack</h1>
     <p class="subtitle">hold your horses people.</p>
     
-    <div class="coming-soon">UNDER CONSTRUCTION</div>
+    <div class="under-construction">UNDER CONSTRUCTION</div>
     
-    <a href="#" class="play-btn">SOON™</a>
+    <a href="#" class="soon-btn">SOON™</a>
   </div>
 
-  <footer>© {{ "now" | date: "%Y" }} avalanches.wtf</footer>
+  <footer>
+    © <span id="year"></span> avalanches.wtf
+  </footer>
 
   <script>
     const titleText = "BlackJack";
@@ -110,6 +114,8 @@
       }
     }
     typeTitle();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
