@@ -14,7 +14,7 @@ categories: programming
 <link rel="stylesheet" href="/assets/css/blog.css">
 </head>
 
-<div title="tr: Hello Friends"
+<div title="Hello Friends 🤑"
     style="cursor: help; display: inline-block;">
      <h1><strong><em>Привет Друзья!</em></strong>
     <img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/513.gif" 
