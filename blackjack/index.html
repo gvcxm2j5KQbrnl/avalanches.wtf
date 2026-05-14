@@ -1,9 +1,9 @@
-<!doctype html>
+!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="BlackJack" />
+  <meta property="og:title" content="Blackjack" />
   <meta property="og:description" content="Blackjack">
   <meta name="theme-color" content="#101010">
   <title>BlackJack</title>
@@ -35,7 +35,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding-top: 18vh; 
+      padding-top: 18vh;
     }
 
     .typing {
@@ -46,11 +46,14 @@
       white-space: nowrap;
       overflow: hidden;
       width: 0;
+      display: inline-block;
       background: linear-gradient(90deg, #a78bfa, #f472b6) !important;
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
       background-size: 300% 100%;
-      animation: typing 2s steps(9) forwards, blink 0.5s step-end infinite alternate, gradient-animation 4s linear infinite;
+      animation: typing 2s steps(9) forwards, 
+                 blink 0.5s step-end infinite alternate, 
+                 gradient-animation 4s linear infinite;
     }
 
     .subtitle {
@@ -95,7 +98,7 @@
 
     @keyframes typing { 
       from { width: 0; } 
-      to { width: 9ch; } 
+      to { width: 8.2ch; }
     }
     @keyframes blink { 
       50% { border-color: transparent; } 
@@ -117,7 +120,7 @@
     <a href="https://github.com/gvcxm2j5KQbrnl/BlackJack" 
        target="_blank" 
        rel="noopener noreferrer" 
-       class="soon-btn">SOON™</a>
+       class="soon-btn">soon™</a>
   </div>
 
   <footer>
