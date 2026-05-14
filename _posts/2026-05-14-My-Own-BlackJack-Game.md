@@ -14,13 +14,12 @@ categories: programming
 <link rel="stylesheet" href="/assets/css/blog.css">
 </head>
 
-<div title="For those that do not speak russian (me included) the headline reads <q>Hello friends</q>"
+<div title="tr: Hello Friends"
     style="cursor: help; display: inline-block;">
-    <strong><em>Привет друзья!</em></strong>
+     <h1><strong><em>Привет Друзья!</em></strong>
     <img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/513.gif" 
          alt="money face gif" 
-         style="height: 35px;">
-  </h2>
+         style="height: 35px;"> </h1>
 </div>
   <p style="font-size: 1.1rem; line-height: 1.6;">
   
