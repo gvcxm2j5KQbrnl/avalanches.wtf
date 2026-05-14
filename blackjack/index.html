@@ -12,33 +12,44 @@
   <link rel="icon" type="image/svg+xml" href="https://avalanches.wtf/assets/favicon.svg" />
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: #101010;
-      color: #f2f2f2;
-      font-family: 'Inter', Arial, sans-serif;
+    html, body {
+      background: #101010 !important;
+      color: #f2f2f2 !important;
+      margin: 0;
+      padding: 0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      width: 100%;
+      font-family: 'Inter', Arial, sans-serif;
       text-align: center;
       overflow: hidden;
     }
 
-    .container {
-      max-width: 600px;
-      padding: 2rem;
+    .home-layout {
+      background: #101010 !important;
+      color: #f2f2f2 !important;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    h1 {
-      font-size: 4.8rem;
-      font-weight: 600;
-      letter-spacing: -3px;
-      margin-bottom: 0.8rem;
+    .typing {
+      font-size: 46px;
+      font-weight: 700;
+      margin: 0 auto 10px;
+      border-right: 3px solid #a78bfa;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      background: linear-gradient(90deg, #a78bfa, #f472b6) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-size: 300% 100%;
+      animation: typing 2s steps(9) forwards, blink 0.5s step-end infinite alternate, gradient-animation 4s linear infinite;
     }
 
     .subtitle {
@@ -77,14 +88,27 @@
       position: absolute;
       bottom: 2rem;
       color: #9ca3af;
-      font-size: 0.9rem;
-      opacity: 0.8;
+      font-size: 13px;
+      margin-top: auto;
+    }
+
+    @keyframes typing { 
+      from { width: 0; } 
+      to { width: 9ch; } 
+    }
+    @keyframes blink { 
+      50% { border-color: transparent; } 
+    }
+    @keyframes gradient-animation {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 0%; }
+      100% { background-position: 0% 0%; }
     }
   </style>
 </head>
-<body>
+<body class="home-layout">
   <div class="container">
-    <h1 id="title">BlackJack</h1>
+    <h1 class="typing">BlackJack</h1>
     <p class="subtitle">hold your horses people.</p>
     
     <div class="under-construction">UNDER CONSTRUCTION</div>
@@ -97,24 +121,6 @@
   </footer>
 
   <script>
-    const titleText = "BlackJack";
-    let index = 0;
-    const titleEl = document.getElementById('title');
-
-    function typeTitle() {
-      titleEl.textContent = titleText.slice(0, index + 1);
-      index++;
-      if (index < titleText.length) {
-        setTimeout(typeTitle, 130);
-      } else {
-        setTimeout(() => {
-          index = 0;
-          typeTitle();
-        }, 2500);
-      }
-    }
-    typeTitle();
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
