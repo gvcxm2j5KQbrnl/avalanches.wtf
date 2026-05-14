@@ -17,7 +17,7 @@ categories: programming
 <div style="text-align: left;">
   <h1>
     <strong><em>Привет друзья!</em></strong>
-    <img src="https://github.com/gvcxm2j5KQbrnl/avalanches.wtf/blob/main/assets/513.gif" 
+    <img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/513.gif" 
          style="height: 30px; position: relative; bottom: 2px; margin-left: 2px;" 
          alt="emoji">
   </h1> 
