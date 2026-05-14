@@ -16,7 +16,7 @@ categories: programming
 
 <div style="text-align: left;">
   <h1>
-    <div title="For those that do not speak russian (me included) the headline reads "hello friends""><strong><em>Привет друзья!</em></strong>
+    <div title="For those that do not speak russian (me included) the headline reads "Hello friends""><strong><em>Привет друзья!</em></strong>
     <img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/513.gif" 
          style="height: 30px; position: relative; bottom: 2px; margin-left: 2px;" 
          alt="emoji">
