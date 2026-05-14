@@ -14,8 +14,8 @@ categories: programming
 <link rel="stylesheet" href="/assets/css/blog.css">
 </head>
 
-<div title="For those that do not speak russian (me included) the headline reads 'Hello friends'">
-  <h2 style="display: flex; align-items: center; gap: 10px;">
+<div title="For those that do not speak russian (me included) the headline reads <q>Hello friends</q>"
+    style="cursor: help; display: inline-block;">
     <strong><em>Привет друзья!</em></strong>
     <img src="https://raw.githubusercontent.com/gvcxm2j5KQbrnl/avalanches.wtf/refs/heads/main/assets/513.gif" 
          alt="money face gif" 
@@ -23,5 +23,4 @@ categories: programming
   </h2>
 </div>
   <p style="font-size: 1.1rem; line-height: 1.6;">
-    
-    
+  
