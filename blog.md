@@ -37,3 +37,6 @@ permalink: /blog/
     </li>
   {% endfor %}
 </ul>
+<script type="module">
+  import champagne from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.12/+esm';
+</script>
