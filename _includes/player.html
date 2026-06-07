@@ -1,0 +1,253 @@
+<script type="module">
+  import champagne from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.12/+esm';
+</script>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+<style>
+  .music-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: rgba(15, 23, 42, 0.9); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .music-widget:hover { transform: translateY(-4px); }
+  .album-art {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+    animation: spin 16s linear infinite;
+    animation-play-state: paused;
+    flex-shrink: 0;
+  }
+  .playing .album-art { animation-play-state: running; }
+  .song-details {
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    width: 110px;
+  }
+  .song-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .artist-name {
+    font-size: 11px;
+    color: #94a3b8;
+    margin: 1px 0 0 0;
+    text-transform: lowercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .track-selector {
+    background: rgba(30, 41, 59, 0.8);
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    outline: none;
+    max-width: 110px;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+  .volume-container {
+    display: flex;
+    align-items: center;
+    width: 0px;
+    overflow: hidden;
+    transition: width 0.3s ease, margin 0.3s ease;
+  }
+  .music-widget:hover .volume-container,
+  .volume-container:focus-within {
+    width: 60px;
+    margin-left: 4px;
+  }
+  .volume-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    cursor: pointer;
+  }
+  .volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+  }
+  .controls-group { display: flex; align-items: center; gap: 4px; }
+  .nav-btn {
+    background: transparent;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-btn svg { width: 12px; height: 12px; fill: #94a3b8; }
+  .nav-btn:hover svg { fill: #ffffff; }
+  .play-btn {
+    background: #ffffff;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .play-btn svg { width: 12px; height: 12px; fill: #0f172a; }
+  .youtube-hide-wrapper {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+</style>
+
+<div class="youtube-hide-wrapper">
+  <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="{{ site.data.playlist[0].youtube_id }}"></div>
+</div>
+
+<div class="music-widget" id="custom-widget" data-turbo-permanent>
+  <div class="album-art" id="widget-art"></div>
+  <div class="song-details">
+    <p class="song-title" id="widget-title"></p>
+    <p class="artist-name" id="widget-artist"></p>
+    <select class="track-selector" id="widget-select">
+      {% for song in site.data.playlist %}
+        <option value="{{ forloop.index0 }}">{{ song.title }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="volume-container">
+    <input type="range" class="volume-slider" id="custom-volume" min="0" max="100" step="1" value="30">
+  </div>
+
+  <div class="controls-group">
+    <button class="nav-btn" id="custom-prev">
+      <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+    </button>
+    <button class="play-btn" id="custom-play-trigger">
+      <svg id="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <button class="nav-btn" id="custom-next">
+      <svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zm-10.5 12l8.5-6-8.5-6z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+<script>
+  const tracks = [
+    {% for song in site.data.playlist %}
+    {
+      title: "{{ song.title }}",
+      artist: "{{ song.artist }}",
+      id: "{{ song.youtube_id }}",
+      cover: "{{ song.artwork_url }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  let currentTrackIdx = 0;
+  const player = new Plyr('#player', { volume: 0.09 });
+  
+  const widget = document.getElementById('custom-widget');
+  const playBtn = document.getElementById('custom-play-trigger');
+  const playIcon = document.getElementById('play-icon');
+  const volumeSlider = document.getElementById('custom-volume');
+  const trackSelect = document.getElementById('widget-select');
+  const prevBtn = document.getElementById('custom-prev');
+  const nextBtn = document.getElementById('custom-next');
+
+  const playPath = "M8 5v14l11-7z";
+  const pausePath = "M6 19h4V5H6v14zm8-14v14h4V5h-4z";
+
+  function updateUI() {
+    if(!tracks.length) return;
+    const t = tracks[currentTrackIdx];
+    document.getElementById('widget-title').textContent = t.title;
+    document.getElementById('widget-artist').textContent = t.artist;
+    document.getElementById('widget-art').style.backgroundImage = `url('${t.cover}')`;
+    trackSelect.value = currentTrackIdx;
+  }
+
+  function playTrack(idx) {
+    currentTrackIdx = idx;
+    updateUI();
+    player.source = {
+      type: 'video',
+      sources: [{ src: tracks[currentTrackIdx].id, provider: 'youtube' }]
+    };
+    player.once('ready', () => { player.play(); });
+  }
+
+  volumeSlider.addEventListener('input', (e) => {
+    const val = parseInt(e.target.value);
+    player.volume = val === 0 ? 0 : Math.pow(val / 100, 2);
+  });
+
+  playBtn.addEventListener('click', () => { player.togglePlay(); });
+  trackSelect.addEventListener('change', (e) => { playTrack(parseInt(e.target.value)); });
+  
+  prevBtn.addEventListener('click', () => {
+    let idx = currentTrackIdx - 1;
+    if (idx < 0) idx = tracks.length - 1;
+    playTrack(idx);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    let idx = currentTrackIdx + 1;
+    if (idx >= tracks.length) idx = 0;
+    playTrack(idx);
+  });
+
+  player.on('play', () => {
+    widget.classList.add('playing');
+    playIcon.querySelector('path').setAttribute('d', pausePath);
+  });
+  player.on('pause', () => {
+    widget.classList.remove('playing');
+    playIcon.querySelector('path').setAttribute('d', playPath);
+  });
+  player.on('ended', () => {
+    let idx = currentTrackIdx + 1;
+    if (idx >= tracks.length) idx = 0;
+    playTrack(idx);
+  });
+
+  updateUI();
+</script>
