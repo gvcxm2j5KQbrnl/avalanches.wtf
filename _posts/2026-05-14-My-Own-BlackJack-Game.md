@@ -24,4 +24,4 @@ categories: programming
   <p style="font-size: 1.1rem; line-height: 1.6;">
    its been three weeks, imma do this when i feel like it 
   </p>
- <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5ICLPieFpgzK20Iwmk1kBH?utm_source=generator" width="10%" height="35" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+ <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5ICLPieFpgzK20Iwmk1kBH?utm_source=generator" width="40%" height="150" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
