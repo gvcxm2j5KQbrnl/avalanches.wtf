@@ -14,6 +14,3 @@ permalink: /about/
 <strong>Hi.</strong>
 <p>This is actually still in progress, check back later!</p>
 
-<script type="module">
-  import champagne from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.12/+esm';
-</script>
