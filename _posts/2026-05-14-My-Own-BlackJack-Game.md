@@ -19,18 +19,19 @@ categories: programming
     position: fixed;
     bottom: 24px;
     right: 24px;
-    background: rgba(15, 23, 42, 0.8); 
+    background: rgba(15, 23, 42, 0.85); 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 12px 20px 12px 12px;
+    padding: 12px 16px 12px 12px;
     border-radius: 40px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
     z-index: 9999;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-width: 320px;
   }
 
   .music-widget:hover {
@@ -38,13 +39,14 @@ categories: programming
   }
 
   .album-art {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: url('https://i.scdn.co/image/ab67616d0000b2736f3adfc82e576b7d55c34ba7') center/cover;
+    background: url('https://i.scdn.co/image/ab67616d00001e02d0b8bc13b08ab92d691d64d4') center/cover;
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
     animation: spin 16s linear infinite;
     animation-play-state: paused;
+    flex-shrink: 0;
   }
 
   .playing .album-art {
@@ -54,25 +56,65 @@ categories: programming
   .song-details {
     display: flex;
     flex-direction: column;
-    padding-right: 4px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    width: 100px;
   }
 
   .song-title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: #f1f5f9;
     margin: 0;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .artist-name {
-    font-size: 12px;
+    font-size: 11px;
     color: #94a3b8;
-    margin: 2px 0 0 0;
+    margin: 1px 0 0 0;
     text-transform: lowercase;
-    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .volume-container {
+    display: flex;
+    align-items: center;
+    width: 0px;
+    overflow: hidden;
+    transition: width 0.3s ease, margin 0.3s ease;
+  }
+
+  .music-widget:hover .volume-container,
+  .volume-container:focus-within {
+    width: 70px;
+    margin-left: 4px;
+  }
+
+  .volume-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    transition: transform 0.1s;
+  }
+
+  .volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
   }
 
   .play-btn {
@@ -87,15 +129,12 @@ categories: programming
     justify-content: center;
     transition: background 0.2s, transform 0.1s;
     padding: 0;
+    flex-shrink: 0;
   }
 
   .play-btn:hover {
     background: #cbd5e1;
     transform: scale(1.05);
-  }
-
-  .play-btn:active {
-    transform: scale(0.95);
   }
 
   .play-btn svg {
@@ -104,8 +143,15 @@ categories: programming
     fill: #0f172a;
   }
 
-  .plyr--audio {
-    display: none !important;
+  .youtube-hide-wrapper {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
   }
 
   @keyframes spin {
@@ -125,17 +171,20 @@ categories: programming
   its been three weeks, imma do this when i feel like it 
 </p>
 
-
-<audio id="player" controls>
-  <source src="/assets/permafrost.mp3" type="audio/mp3" />
-</audio>
+<div class="youtube-hide-wrapper">
+  <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="sd9kHahPjp4"></div>
+</div>
 
 <div class="music-widget" id="custom-widget">
   <div class="album-art"></div>
   
   <div class="song-details">
-    <p class="song-title">permafrost</p>
+    <p class="song-title">danmaku</p>
     <p class="artist-name">kumosai</p>
+  </div>
+
+  <div class="volume-container">
+    <input type="range" class="volume-slider" id="custom-volume" min="0" max="1" step="0.05" value="0.4">
   </div>
 
   <button class="play-btn" id="custom-play-trigger" aria-label="Play/Pause">
@@ -143,20 +192,28 @@ categories: programming
   </button>
 </div>
 
-
 <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 <script>
-  const player = new Plyr('#player');
+  const player = new Plyr('#player', { volume: 0.4 });
   
   const widget = document.getElementById('custom-widget');
   const playBtn = document.getElementById('custom-play-trigger');
   const playIcon = document.getElementById('play-icon');
+  const volumeSlider = document.getElementById('custom-volume');
 
   const playPath = "M8 5v14l11-7z";
   const pausePath = "M6 19h4V5H6v14zm8-14v14h4V5h-4z";
 
   playBtn.addEventListener('click', () => {
     player.togglePlay();
+  });
+
+  volumeSlider.addEventListener('input', (e) => {
+    player.volume = e.target.value;
+  });
+
+  player.on('volumechange', () => {
+    volumeSlider.value = player.volume;
   });
 
   player.on('play', () => {
