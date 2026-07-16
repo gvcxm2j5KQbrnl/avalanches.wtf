@@ -24,4 +24,5 @@ categories: programming
   <p style="font-size: 1.1rem; line-height: 1.6;">
    its been three weeks, imma do this when i feel like it 
   </p>
-
+  
+ <p> yeahhh nah, its wraps im abandoning this. </p>
