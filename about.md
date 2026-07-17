@@ -14,4 +14,4 @@ permalink: /about/
 <strong>Hi.</strong>
 <p>This is actually still in progress, check back later!</p>
 
-<img src="https://c.tenor.com/lB1H9g-9sLwAAAAC/tenor.gif" alt="Komaru GIF">
+<img src="https://c.tenor.com/lB1H9g-9sLwAAAAC/tenor.gif" alt="Komaru GIF" height="50" width="50">
