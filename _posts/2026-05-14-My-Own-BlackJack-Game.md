@@ -25,4 +25,4 @@ categories: programming
    its been a couple weeks, imma do this when i feel like it.
   </p>
 
-  <p>UPDATE: Working on <a href="https://www.comptia.org/en-us/certifications/security/" >Security+</a>, will do this later :P</p>
+  <p>UPDATE: Working on <a href="https://www.comptia.org/en-us/certifications/security/" target= "_blank" rel="noopener noreferrer" >Security+</a>, will do this later :P</p>
