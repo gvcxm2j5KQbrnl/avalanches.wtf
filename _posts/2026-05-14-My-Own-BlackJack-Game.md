@@ -22,7 +22,7 @@ categories: programming
          style="height: 35px;"> </h1>
 </div>
   <p style="font-size: 1.1rem; line-height: 1.6;">
-   its been three weeks, imma do this when i feel like it 
+   its been a couple weeks, imma do this when i feel like it.
   </p>
-  
- <p> yeahhh nah, its wraps im abandoning this. </p>
+
+  <p>UPDATE: Working on <a href="https://www.comptia.org/en-us/certifications/security/" >Security+</a>, will do this later :P</p>
