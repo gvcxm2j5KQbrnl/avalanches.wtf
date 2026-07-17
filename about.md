@@ -14,4 +14,4 @@ permalink: /about/
 <strong>Hi.</strong>
 <p>This is actually still in progress, check back later!</p>
 
-<img src="https://tenor.com/view/komaru-mugimeshi323-cat-minecraft-ocean-monument-mining-fatigue-gif-10672765814089560252" alt="Komaru GIF">
+<img src="https://c.tenor.com/lB1H9g-9sLwAAAAC/tenor.gif" alt="Komaru GIF">
